@@ -1,10 +1,43 @@
+@charset "UTF-8";
+
+.ProximaNovaA-Bold { 
+	font-family: ProximaNovaA-Bold;
+	font-weight: normal;
+	font-style: normal;
+}
+.ProximaNovaA-Light { 
+	font-family: ProximaNovaA-Light;
+	font-weight: normal;
+	font-style: normal;
+}
+.ProximaNovaS-Bold { 
+	font-family: ProximaNovaS-Bold;
+	font-weight: normal;
+	font-style: normal;
+}
+.ProximaNovaS-Light { 
+	font-family: ProximaNovaS-Light;
+	font-weight: normal;
+	font-style: normal;
+}
+.ProximaNova-Bold {
+	font-family: ProximaNova-Bold;
+	font-weight: normal;
+	font-style: normal;
+}
+.ProximaNova-Light { 
+	font-family: ProximaNova-Light;
+	font-weight: normal;
+	font-style: normal;
+}
+
 *, :before, :after{
     box-sizing: border-box;
 }
 
 body{
     font-size: 1rem;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: ProximaNova-Light, Arial, Helvetica, sans-serif;
 }
 
 body .page[data-page="index"]{
@@ -404,6 +437,12 @@ button{
     color: #0d5180;
 }
 
+.btn-orange {
+    background-color: #FAA61A;
+    border-color: #FAA61A;
+    color: #fff;
+}
+
 .btn-green{
     background-color: #9aca41;
     border-color: #9aca41;
@@ -537,6 +576,10 @@ input.mf-input{
     font-weight: 300;
     margin-top: 2rem;
     margin-bottom: 1.5rem;
+}
+
+button.btn.btn-sm, .loginBlock .fRow > div.inline-block > button{
+    font-size: 1rem;
 }
 
 div.circle{
@@ -775,6 +818,11 @@ h1.small{
 .paddLeftRight10{
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.paddLeftRight5{
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .paddTopBottom10{
@@ -1057,7 +1105,7 @@ div.fRow{
 }
 
 div.fRow input.mf-input, div.fRow textarea.mf-textarea, div.fRow select.mf-select{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: ProximaNova-Light, Arial, Helvetica, sans-serif;
     border: none;
     border: 0;
     background-color: #fff;
@@ -2125,7 +2173,7 @@ div.topicText > textarea{
     height: inherit;
     width: 100%;
     padding: 10px 10px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: ProximaNova-Light, Arial, Helvetica, sans-serif;
     border: none;
     border: 0;
     background-color: #fff;
@@ -2141,7 +2189,7 @@ div.wrapQuestion textarea.mf-textarea{
     width: 100%;
     padding: 10px;
     background-color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: ProximaNova-Light, Arial, Helvetica, sans-serif;
     border: none;
     border: 0;
     font-size: 1rem;

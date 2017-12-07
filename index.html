@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <!-- Your app title -->
-    <title>My OEvent APP</title>
+    <title>M-Event</title>
     <meta name="description" content="M-Event is the companion APP for various orthopaedic events  around the world. It includes Interactive agendas, LIVE polls, speaker bios, Q & A, attendee directory, local information, file repository. O-Event provides event coordinators with a robust set of analytical tools to help build insights into your events attendees." />
     <!-- Path to Framework7 iOS CSS theme styles-->
     <link rel="stylesheet" href="css/framework7.ios.min.css">
@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
     <link rel="stylesheet" href="css/framework7-icons.css">
     <!-- Path to your custom app styles-->
+    <link rel="stylesheet" type="text/css" href="css/MyFontsWebfontsKit.css" />
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/my-app.css">
@@ -78,7 +79,7 @@
                                                     <div class="mf-input"><i class="f7-icons">lock</i><input type="password" class="mf-input" name="aEOE_password" placeholder="Password" required="required" autocorrect="off" autocapitalize="none" oninvalid="setCustomValidity('Field Required!')" onchange="try{setCustomValidity('')}catch(e){}" data-title="Field Required!" /></div>
                                                 </div>
                                                 <div class="fRow text-center">
-                                                    <button class="button btn btn-white">Login</button>
+                                                    <button class="button btn btn-orange">Login</button>
                                                 </div>
                                             </form>
                                             <div class="fRow text-center"><a href="#" data-action="toggleform" data-target="#frmForgotPasswordWrap" data-animateway="1">Forgot Password?</a></div>
@@ -93,7 +94,7 @@
                                                     <div class="mf-input"><i class="f7-icons icon-email">email</i><input type="email" class="mf-input" name="aEOE_email" placeholder="Email Address" required="required" autocorrect="off" autocapitalize="none" /></div>
                                                 </div>
                                                 <div class="fRow text-center">
-                                                    <button class="button btn btn-white">Retrieve Password</button>
+                                                    <button class="button btn btn-orange">Retrieve Password</button>
                                                 </div>
                                             </form>
                                             <div class="fRow text-center"><a href="#" data-action="toggleform" data-target="#frmLoginUserWrap" data-animateway="2">Back to Login</a></div>
@@ -141,11 +142,11 @@
                                                     <div class="mf-input"><i class="f7-icons">lock</i><input type="password" class="mf-input" name="aEOE_passwordagain" placeholder="Retype Password" required="required" autocorrect="off" autocapitalize="none" oninvalid="setCustomValidity('Field Required!')" onchange="try{setCustomValidity('')}catch(e){}" data-title="Field Required!" /></div>
                                                 </div>
                                                 <div class="fRow row text-center">
-                                                    <div class="inline-block col-50">
-                                                        <button type="submit" class="button btn btn-green">Update</button>
+                                                    <div class="inline-block col-50 paddLeftRight5">
+                                                        <button type="submit" class="button btn btn-green btn-sm">Update</button>
                                                     </div>
-                                                    <div class="inline-block col-50">
-                                                        <button type="button" class="button btn btn-danger" data-action="addedititem" data-context="skipPasswordUpdate" data-userid="{{results.profile.userid}}">Skip</button>
+                                                    <div class="inline-block col-50 paddLeftRight5">
+                                                        <button type="button" class="button btn btn-danger btn-sm" data-action="addedititem" data-context="skipPasswordUpdate" data-userid="{{results.profile.userid}}">Skip</button>
                                                     </div>
                                                 </div>
                                             </form>
