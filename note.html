@@ -1,0 +1,49 @@
+<div class="page page-discussion" data-page="note">
+    <div class="overlayBlue">
+        <div id="bottomHeader" class="bottomHeader abs">
+            <div id="wrapTopicTextHolder" class="wrapTopicTextHoder abs">
+                <form action="#" id="frmEditUserNote" method="post" data-action="handlewithform">
+                    <div class="hidden">
+                        <input type="hidden" name="context" value="editUserNote" />
+                        <input type="hidden" name="aEOE_id" value="{{id}}" />
+                    </div>
+                    <div id="topicText" class="topicText innote"><textarea name="aEOE_content" id="aEOE_content" class="mf-textarea" placeholder="Type your note here..." required="required">{{content}}</textarea></div>
+                    <div class="bg-magenta text-center height54">
+                        <div class="padd10">
+                            <div class="row no-gutter">
+                                <div class="col-10 tablet-30"></div>
+                                <div class="col-80 tablet-40"><button class="button button-fill color-green">SAVE</button></div>
+                                <div class="col-10 tablet-30"></div>
+                              </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="bg-magenta text-center height54">
+                <div class="padd10">
+                    <div class="row no-gutter">
+                        <div class="col-10 tablet-30"></div>
+                        <div class="col-80 tablet-40"><a href="#" data-action="addedititem" data-context="sendUserNoteToUserMail" data-id="{{id}}" class="button button-fill color-green">EXPORT TO EMAIL</a></div>
+                        <div class="col-10 tablet-30"></div>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div id="topHeader" class="topHeader abs">
+            <div class="businessConf2 bg-dark-opacity text-right height44">
+                <div class="abs right0 right10 top50"><a href="#" data-action="joindiscussion" data-target="#wrapTopicTextHolder"><img src="images/pencil_icon.png" alt="Edit" /></a></div>
+            <div class="abs hasBackLink">
+                <a href="#" class="link back-link back" data-templatename="welcomeTemplate"><img src="images/goback_arrow.png" alt="Back" /></a>
+            </div>
+            <div class="text-center text-white padd10"><strong>{{name}}</strong></div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="padd20 text-white">
+                <div id="wrapUserNotes" class="wrapAttractions paddTopBottom20">
+                    <div class="bodytext">{{content}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

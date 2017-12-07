@@ -1,0 +1,62 @@
+<div class="page" data-page="custom">
+    <div class="overlayBlue">
+        <div id="topHeader" class="topHeader abs">
+            <div class="businessConf2 bg-dark-opacity text-right height44">
+            <div class="abs hasBackLink">
+                <a href="#" class="link back-link back" data-templatename="welcomeTemplate"><img src="images/goback_arrow.png" alt="Back" /></a>
+            </div>
+            <div class="text-center text-white padd10"><strong>Speaker Details</strong></div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="text-white paddTopBottom20">
+                <div id="wrapSpeakers" class="wrapAttractions paddTopBottom20 text-center">
+                    <img class="circle" src="{{image}}" alt="{{name}}" />
+                    <h2>{{name}}</h2>
+                    <p>{{subinformation}}</p>
+                    <div class="socialIcons paddTopBottom20">
+                        {{#if facebook}}
+                            <a class="external" target="_blank" href="{{facebook}}"><img src="images/facebook.png" alt="Facebook" /></a>
+                        {{/if}}
+                        {{#if twitter}}
+                            <a class="external" target="_blank" href="{{twitter}}"><img src="images/twitter.png" alt="" /></a>
+                        {{/if}}
+                        {{#if email}}
+                            <a class="external" target="_blank" href="mailto:{{email}}"><img src="images/emailicon.png" alt="" /></a>
+                        {{/if}}
+                        {{#if linkedin}}
+                        <a class="external" target="_blank" href="{{linkedin}}"><img src="images/linkedin.png" alt="" /></a>
+                        {{/if}}
+                    </div>
+                    
+                    <div>
+                    {{#if agendas}}
+                        {{#if agendas.records}}
+                            <div class="row">
+                                <div class="col-100">
+                                    {{#each agendas.records}}
+                                        <a href="#" data-action="addedititem" data-context="wrapCustomPage" data-href="" data-eventid="{{eventid}}" data-id="3">
+                                            <div class="item text-left text-white">
+                                                <div class="flexbox">
+                                                    <div class="wrapDateBlock">
+                                                        <div>{{dmonth}}</div>
+                                                        <div>{{dday}}</div>
+                                                    </div>
+                                                    <div class="flex1"><p class="small">{{stime}}</p><h3>{{description}}</h3><span class="small"><i class="fa fa-map-marker" aria-hidden="true"></i> {{name}}</span></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        {{/if}}
+                    {{/if}}
+                    </div>
+                    <div class="padd20">
+                        <div class="text-left">{{biography}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

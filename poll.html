@@ -1,0 +1,63 @@
+<div class="page page-poll" data-page="poll" data-online="{{online}}" {{dataanswered}}>
+    <div class="overlayBlue">
+        
+        <div id="topHeader" class="topHeader abs">
+            <div class="businessConf2 bg-darkblue text-right height44">
+            <div class="abs hasBackLink">
+                <a href="#" class="link back-link back" data-templatename="welcomeTemplate"><img src="images/goback_arrow.png" alt="Back" /></a>
+            </div>
+            <div class="abs refreshPoll animated">
+                {{#if answeredoption}}
+                <a href="#" data-action="addedititem" data-context="wrapPollStatisticByOptions" data-id="{{id}}"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+                {{/if}}
+            </div>    
+            <div class="text-center text-white padd10"><strong>LIVE POLLS</strong></div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="overlayDisable"></div>
+            <div id="wrapPieChart" class="bg-white wrapPieChart abs">
+                <div class="pieChartTextIntro abs">
+                    <div class="text-center text-primary">
+                        Please make a selection above<br />
+                        to view the LIVE Poll results.
+                    </div>
+                </div>
+                <div data-target="piechart" class="chart abs">
+                    <canvas id="myChart" width="200" height="200"></canvas>
+                    <div class="padd20">
+                        <div class="text-center text-primary" data-target="wrapcountchartvotes">
+
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="text-white zindex100">
+                <div id="wrapPolls" class="wrapAttractions" data-id="{{id}}">
+                    <div class="bg-bluepage paddTopBottom10">
+                        <div class="paddLeftRight30">
+                            <h3>{{name}}</h3>
+                        </div>
+                        <div class="paddLeftRight20">
+                            <div class="relative padd5"></div>
+                        </div>
+                    </div>
+                    <div class="personalBlock">
+                        <div class="box effect2">
+                            <form action="#" id="frmUserExperiencePoll" method="post" data-action="handlewithform" class="store-data">
+                            <div class="hidden">
+                                <input name="context" value="userExperiencePoll" type="hidden">
+                            </div>
+                            <div class="wrapQuestion" data-target="polloptions">
+
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                    <span id="bottomOfMessages"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

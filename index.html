@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=medium-dpi, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Your app title -->
+    <title>My OEvent APP</title>
+    <meta name="description" content="M-Event is the companion APP for various orthopaedic events  around the world. It includes Interactive agendas, LIVE polls, speaker bios, Q & A, attendee directory, local information, file repository. O-Event provides event coordinators with a robust set of analytical tools to help build insights into your events attendees." />
+    <!-- Path to Framework7 iOS CSS theme styles-->
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <!-- Path to Framework7 iOS related color styles -->
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="css/framework7-icons.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/my-app.css">
+  </head>
+  <body>
+      
+      <div class="abs popupInfo text-center" id="splashScreen">
+          <div class="overlayBlue"></div>
+          <div class="logo abs top50 left50 text-center">
+             <div class="animated" data-target="replacewithsplashlogo"></div>
+          </div>
+      </div>
+      <div class="zeroopacity1">
+          My O-Event is the companion APP for various orthopaedic events  around the world. It includes Interactive agendas, LIVE polls, speaker bios, Q & A, attendee directory, local information, file repository. O-Event provides event coordinators with a robust set of analytical tools to help build insights into your events attendees.
+      </div>  
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+      <div class="content-block">
+        <p>Left panel content goes here</p>
+      </div>
+    </div>
+    <!-- Views -->
+    <div class="views">
+        <div id="superTransitionEffect" class="superTransitionEffect abs"></div>
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main">
+        
+        <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+          <!-- Page, "data-page" contains page name -->
+          
+                <!-- Scrollable page content -->
+                
+                  <!--------------------------->
+                <!--   TEMPLATES SECTION  --->
+                <!--------------------------->
+                <!-- Media List Template  -->
+                
+
+                <script id="loginTemplate" type="text/template7">
+                    <div data-page="index" class="page">
+                        <div class="overlayBlue">
+                            <div class="page-content">
+                                <div id="loginBlock" class="loginBlock text-center">
+                                    <div class="logo"><img src="images/logo.png" alt="Myoevents.com - App" /></div>
+                                    <div class="wrapAllForms">
+                                        <div id="frmLoginUserWrap" class="wrapLoginForms animated abs" data-target="frmLoginUserWrap">
+                                            <form action="#" id="frmLoginFEUser" method="post" data-action="handlewithform">
+                                                <div class="hidden">
+                                                    <input type="hidden" name="context" value="loginFEUser" />
+                                                    <input type="hidden" name="isFromAPP" value="1" />
+                                                </div>
+                                                <div class="fRow text-center">
+                                                    <div class="mf-input"><i class="f7-icons icon-email">email</i><input type="email" class="mf-input" name="aEOE_email" placeholder="Email Address" required="required" autocorrect="off" autocapitalize="none" oninvalid="setCustomValidity('Field Required!')" onchange="try{setCustomValidity('')}catch(e){}" data-title="Field Required!" /></div>
+                                                </div>
+                                                <div class="fRow text-center">
+                                                    <div class="mf-input"><i class="f7-icons">lock</i><input type="password" class="mf-input" name="aEOE_password" placeholder="Password" required="required" autocorrect="off" autocapitalize="none" oninvalid="setCustomValidity('Field Required!')" onchange="try{setCustomValidity('')}catch(e){}" data-title="Field Required!" /></div>
+                                                </div>
+                                                <div class="fRow text-center">
+                                                    <button class="button btn btn-white">Login</button>
+                                                </div>
+                                            </form>
+                                            <div class="fRow text-center"><a href="#" data-action="toggleform" data-target="#frmForgotPasswordWrap" data-animateway="1">Forgot Password?</a></div>
+                                        </div>
+                                        <div id="frmForgotPasswordWrap" class="wrapLoginForms animated abs" data-target="frmForgotPasswordWrap">
+                                            <form action="#" id="frmForgotPassword" method="post" data-action="handlewithform">
+                                                <div class="hidden">
+                                                    <input type="hidden" name="context" value="sendForgotPassword" />
+                                                    <input type="hidden" name="isFromAPP" value="1" />
+                                                </div>
+                                                <div class="fRow text-center">
+                                                    <div class="mf-input"><i class="f7-icons icon-email">email</i><input type="email" class="mf-input" name="aEOE_email" placeholder="Email Address" required="required" autocorrect="off" autocapitalize="none" /></div>
+                                                </div>
+                                                <div class="fRow text-center">
+                                                    <button class="button btn btn-white">Retrieve Password</button>
+                                                </div>
+                                            </form>
+                                            <div class="fRow text-center"><a href="#" data-action="toggleform" data-target="#frmLoginUserWrap" data-animateway="2">Back to Login</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="wrapAPPOnStoreAndGooglePlay" class="wrapAPPOnStoreAndGooglePlay hidden text-center">
+                                    <div class="paddTopBottom20">
+                                        <div class="inline-block">
+                                            <div class="inline-block"><a target="_blank" class="external" href="https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1317472370&mt=8"><img src="images/AppStoreIcon.png" alt="Download on the App Store" /></a></div>
+                                            <div class="inline-block"><a target="_blank" class="external" href="https://play.google.com/store/apps/details?id=com.myoevents.app2"><img src="images/GooglePlayIcon.png" alt="Download from Google Play" /></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </script>
+                
+                <script id="updatePasswordTemplate" type="text/template7">
+                    <div data-page="index" class="page">
+                        <div class="overlayBlue">
+                            <div class="page-content">
+                                <div id="wrapWelcomeBlocks" class="wrapWelcomeBlocks1">
+                                    <div class="text-center">
+                                        <div class="logo"><img src="images/logo.png" alt="Myoevents.com - App" /></div>
+                                    </div>
+                                    <div class="padd20"></div>
+                                    <div class="h3 text-white text-center paddLeftRight20">{{results.profile.welcometext}}</div>
+                                    <div class="padd10"></div>
+                                    <div id="loginBlock" class="loginBlock text-center">
+
+                                        <div class="wrapAllForms">
+                                            <div id="frmResetPasswordWrap" class="wrapLoginForms animated" data-target="frmResetPasswordWrap">
+                                            <form action="#" id="frmResetPassword" method="post" data-action="handlewithform">
+                                                <div class="hidden">
+                                                    <input type="hidden" name="context" value="resetPassword" />
+                                                    <input type="hidden" name="isFromAPP" value="1" />
+                                                    <input type="hidden" name="aEOE_userid" value="{{results.profile.userid}}" />
+                                                </div>
+                                                <div class="fRow text-center">
+                                                    <div class="mf-input"><i class="f7-icons">lock</i><input type="password" class="mf-input" name="aEOE_password" placeholder="Password" required="required" autocorrect="off" autocapitalize="none" oninvalid="setCustomValidity('Field Required!')" onchange="try{setCustomValidity('')}catch(e){}" data-title="Field Required!" /></div>
+                                                </div>
+                                                <div class="fRow text-center">
+                                                    <div class="mf-input"><i class="f7-icons">lock</i><input type="password" class="mf-input" name="aEOE_passwordagain" placeholder="Retype Password" required="required" autocorrect="off" autocapitalize="none" oninvalid="setCustomValidity('Field Required!')" onchange="try{setCustomValidity('')}catch(e){}" data-title="Field Required!" /></div>
+                                                </div>
+                                                <div class="fRow row text-center">
+                                                    <div class="inline-block col-50">
+                                                        <button type="submit" class="button btn btn-green">Update</button>
+                                                    </div>
+                                                    <div class="inline-block col-50">
+                                                        <button type="button" class="button btn btn-danger" data-action="addedititem" data-context="skipPasswordUpdate" data-userid="{{results.profile.userid}}">Skip</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>    
+                </script>
+                
+                <script id="listEvents" type="text/template7">
+                    <div data-page="index" class="page">
+                        <div class="overlayBlue">
+                            <div class="page-content">
+                                <div id="wrapWelcomeBlocks" class="list-block wrapWelcomeBlocks">
+                                    {{#if results}}
+                                        {{#if results.success}}
+                                            {{#if results.welcometext}}
+                                                <div class="text-center">
+                                                    <div class="logo"><img src="images/logo.png" alt="Myoevents.com - App" /></div>
+                                                </div>
+                                                <div class="padd20"></div>
+                                                <div class="h3 text-white text-center">{{results.welcometext}}</div>
+                                                <div class="padd20"></div>
+                                            {{/if}}
+                                            {{#each results.records}} 
+                                                <div class="relative fullwidth">
+                                                    <div class="relative item text-center text-white item1">
+                                                        <a{{actions}} data-href="{{realpath}}" href="{{realpath}}" target="_blank" data-id="{{id}}" class="{{linkClass}}">
+                                                            <strong>{{name}}</strong>
+                                                            <div>
+                                                                <span class="text-muted">{{fromto}}</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            {{/each}}  
+                                        {{/if}}
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </script>
+                
+                <script id="welcomeTemplate" type="text/template7">
+                    <div data-page="index" class="page">
+                        <div class="overlayBlue">
+                            {{#if results}}
+                                {{#if results.success}}
+                                    {{#if results.eventname}}
+                            <div id="topHeader" class="topHeader abs">
+                            <nav id="menu" class="navbar animated">
+                                <ul class="row">
+                                    {{#if results}}
+                                        {{#if results.success}}
+                                            {{#if results.multipleevents}}
+                                                <li class="{{results.menulinkclass}} text-center"><a data-action="addedititem" data-context="wrapAllMyEvents" href="#" class="relative bg-darkblue" data-userid="{{results.profile.userid}}"><strong>My Events</strong></a></li>
+                                            {{/if}}    
+                                            {{#if results.profile}}
+                                                <li class="{{results.menulinkclass}} text-center"><a data-target="myprofile" href="me.html" class="relative bg-mf-green" data-context='{{stringify results.profile}}'><strong>Edit Profile</strong></a></li>
+                                            {{/if}}
+                                        {{/if}}
+                                    {{/if}}        
+                                    <li class="{{results.menulinkclass}} text-center"><a href="#" data-action="addedititem" data-context="logoutFEUser" class="relative bg-warning"><strong>Logout</strong></a></li>
+                                    <div class="noFloat"></div>
+                                </ul>
+                            </nav>
+            <div class="businessConf2 bg-dark-opacity text-left padd10 padd-right44">
+            
+            {{#if results}}
+            {{#if results.success}}
+            {{#if results.profilephoto}}
+            <a id="preview" class="abs top50 circle" href="#" data-target="#menu" data-action="togglemenu">
+            <img src="{{results.profilephoto}}" />
+            </a>
+            {{else}}
+            <a id="preview" class="abs top50" href="#" data-target="#menu" data-action="togglemenu">
+            <img src="http://www.myoevents.com/images/profileIcon.png" />
+            </a>
+            {{/if}}
+            {{/if}}
+            {{/if}} 
+            <strong>
+            {{#if results}}
+                {{#if results.eventname}}
+                {{results.eventname}}
+                {{/if}}
+            {{/if}}
+            </strong></div></div>
+                                            {{/if}}
+                                        {{/if}}
+                                    {{/if}}      
+                            <div class="page-content">
+                                <div id="wrapWelcomeBlocks" class="list-block wrapWelcomeBlocks">
+                                    {{#if results}}
+                                    {{#if results.success}}
+                                        {{#if results.welcometext}}
+                                            <div class="text-center">
+                                                    <div class="logo"><img src="images/logo.png" alt="Myoevents.com - App" /></div>
+                                                </div>
+                                                <div class="padd20"></div>
+                                            <div class="h3 text-white text-center">{{results.welcometext}}</div>
+                                            <div class="padd20"></div>
+                                        {{/if}}   
+                                        
+                                        {{#if results.eventname}}
+                                                <div class="row">
+                                            {{#each results.records}}
+                                                <div class="col-33 tablet-20">
+                                                    <div class="item text-center text-white">
+                                                            {{#if unreadAlerts}}
+                                                                <div class="badge abs text-center"><span class="abs top50 left50">{{unreadAlerts}}</span></div>
+                                                            {{/if}}
+                                                            {{#if unvotedPolls}}
+                                                                <div class="badge abs text-center"><span class="abs top50 left50">{{unvotedPolls}}</span></div>
+                                                            {{/if}}
+                                                            <a{{actions}} data-href="{{realpath}}" href="{{realpath}}" target="_blank" data-id="{{id}}" data-bgcolor="{{color}}" class="{{linkClass}}">
+                                                                <div class="circle" style="background-color: {{color}}; background-image: url({{image}})"></div>
+                                                            </a>
+                                                    <h1 class="small">{{name}}</h1>
+                                                    </div>
+                                                </div>
+                                            {{/each}}
+                                                </div>
+                                        {{else}}
+                                            {{#each results.records}} 
+                                                <div class="relative fullwidth">
+                                                    <div class="relative item text-center text-white item1">
+                                                        <a{{actions}} data-href="{{realpath}}" href="{{realpath}}" target="_blank" data-id="{{id}}" class="{{linkClass}}">
+                                                            <strong>{{name}}</strong>
+                                                            <div>
+                                                                <span class="text-muted">{{fromto}}</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            {{/each}}    
+                                        {{/if}}        
+                                        
+                                    {{else}}
+                                    <div class="text-center padd10">{{results.message}}</div>
+                                    {{/if}}
+                                    {{/if}}        
+                                </div>
+                            </div>
+                        </div>
+                        <!-- IF NO PROFILE INFO -->
+                        <div class="popover popover-ifnoprofilephoto">
+                          <div class="popover-angle"></div>
+                          <div class="popover-inner">
+                            <div class="padd10 text-white">
+                              Welcome {{firstname}}, click here<br />to complete your profile!
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </script>
+                
+                <script id="customPageTemplate" type="text/template7">
+                    <div data-page="custom" class="page">
+                        {{#if sponsors}}
+                            <div class="overlayBlue wrapSponsors">
+                        {{else}}
+                            <div class="overlayBlue">
+                        {{/if}}
+                            <div id="topHeader" class="topHeader abs">
+                                <div class="businessConf2 bg-darkblue text-center height44">
+                                {{#if attendees}}
+                                    {{#if results.showalphastart}}
+                                <div id="wrapCurrentAlphabetHere"><div class="wrapAlpha text-white text-left"><strong><span data-target="currentLetter">A</span></strong></div></div>
+                                    {{/if}}
+                                {{/if}}
+                                {{#if usernotes}}
+                                <div class="abs right0 right10 top50">
+                                    <a href="#" data-action="addedititem" data-context="wrapAddNewUserNote" data-eventid="{{results.eventid}}" data-sentonce="0" data-title=""><i class="f7-icons text-white">add_round</i></a>
+                                </div>
+                                {{/if}}
+                                {{#if polls}}
+                                        {{#if results.livepollmanager}}
+                                <div class="abs right0 right10 top50">
+                                    <a href="#" data-action="addedititem" data-context="wrapAddNewLivePoll" data-eventid="{{results.eventid}}" data-sentonce="0" data-title=""><i class="f7-icons text-white">add_round</i></a>
+                                </div>
+                                    {{/if}}
+                                {{/if}}    
+                                {{#if agenda}}
+                                    {{#if results}}
+                                        {{#if results.dates}}
+                                            <div id="wrapTopAgendaDates" class="wrapTopAgendaDates">
+                                                <div class="flexbox">
+                                                    {{#each results.dates}}
+                                                        <div class="flex1 text-center text-uppercase{{classItem}}" data-action="scrolltoagendalist" data-ddate="{{@key}}">
+                                                            <div>{{dmonth}}</div>
+                                                            <div>{{dday}}</div>
+                                                        </div>
+                                                    {{/each}}
+                                                </div>
+                                            </div> 
+                                    {{/if}}
+                                {{/if}}
+                                        
+                                <div class="abs hasBackLink">
+                                    <a href="#" class="link back-link back" data-templatename="welcomeTemplate"><img src="images/goback_arrow.png" alt="Back" /></a>
+                                </div>
+                                <div class="text-center text-white padd10"><strong>{{title}}</strong></div>
+                                </div>
+                            </div>
+                            <div class="page-content">
+                            <!-- DISCOVER -->
+                                {{#if discover}}
+                                <div class="topImage" style="background-image: url({{image}})" class="lazy"><div class="relative"></div></div>
+                                <div class="padd20 text-white">{{description}}</div>
+                                <div id="wrapAttractions" class="wrapAttractions padd20">
+                                    {{#if results}}
+                                        {{#if results.records}}
+                                            <div class="row">
+                                                <div class="col-100">
+                                                    {{#each results.records}}
+                                                        {{#if url}}
+                                                        <a href="{{url}}" target="_blank" class="external">
+                                                        {{/if}}
+                                                        <div class="item text-left text-white">
+                                                            <div class="flexbox">
+                                                                {{#if image}}
+                                                                    <div class="image-holder"><img src="{{image}}" alt="{{name}}" /></div>
+                                                                {{/if}}
+                                                                <div class="flex1"><i class="f7-icons top50 abs text-blue">chevron_right</i><h3>{{name}}</h3></div>
+                                                            </div>
+                                                        </div>
+                                                        {{#if url}}
+                                                        </a>
+                                                        {{/if}}
+                                                    {{/each}}
+                                                 </div>
+                                            </div>
+                                        {{/if}}
+                                    {{/if}
+                                </div>
+                                {{else}}
+                                <!-- SOCIAL MEDIA -->
+                                    {{#if social}}
+                                        <div class="padd20 text-white">
+                                            <div id="wrapSocialMedia" class="wrapAttractions paddTopBottom20">
+                                                <div class="row">
+                                                    <div class="col-100">
+                                                    {{#if facebook}}
+                                                        <a href="{{facebook}}" target="_blank" class="external">
+                                                            <div class="item text-left text-white">
+                                                                <div class="relative">
+                                                                    <div class="image-holder" style="background-image: url(images/facebook.png);"><div class="relative"></div></div>
+                                                                    <div class="flex2"><div class="abs top50 fullwidth">
+                                                                        <i class="f7-icons top50 abs text-blue">chevron_right</i><h2>Facebook</h2><span>{{facebooktext}}</span>
+                                                                    </div></div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    {{/if}}
+                                                    {{#if twitter}}
+                                                        <a href="{{twitter}}" target="_blank" class="external">
+                                                            <div class="item text-left text-white">
+                                                                <div class="relative">
+                                                                    <div class="image-holder" style="background-image: url(images/twitter.png);"><div class="relative"></div></div>
+                                                                    <div class="flex2"><div class="abs top50 fullwidth">
+                                                                        <i class="f7-icons top50 abs text-blue">chevron_right</i><h2>Twitter</h2><span>{{twittertext}}</span>
+                                                                    </div></div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    {{/if}}
+                                                    {{#if linkedin}}
+                                                        <a href="{{linkedin}}" target="_blank" class="external">
+                                                            <div class="item text-left text-white">
+                                                                <div class="relative">
+                                                                    <div class="image-holder" style="background-image: url(images/linkedin.png);"><div class="relative"></div></div>
+                                                                    <div class="flex2"><div class="abs top50 fullwidth">
+                                                                        <i class="f7-icons top50 abs text-blue">chevron_right</i><h2>Linkedin</h2><span>{{linkedintext}}</span>
+                                                                    </div></div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    {{/if}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>        
+                                    {{else}}
+                                    <!-- ALERTS -->
+                                        {{#if alerts}}
+                                            <div class="padd20 text-white">
+                                                <div id="wrapAlerts" class="wrapAttractions paddTopBottom20">
+                                                    {{#if results}}
+                                                        {{#if results.records}}
+                                                            <div class="row">
+                                                                <div class="col-100">
+                                                                    {{#each results.records}}
+                                                                        <a href="alert.html" data-action="markalert" data-id="{{id}}" data-eventid="{{eventid}}" data-context='{{stringify this}}'>
+                                                                        <div class="item text-left text-white{{itemClass}}">
+                                                                            <div class="flexbox">
+                                                                                <div class="flex1"><i class="f7-icons top50 abs">chevron_right</i><h3>{{name}}</h3><span class="small">Alert Posted: {{createdon}}</span></div>
+                                                                            </div>
+                                                                        </div>
+                                                                        </a>
+                                                                    {{/each}}
+                                                                 </div>
+                                                            </div>
+                                                        {{/if}}
+                                                    {{/if}
+                                                </div>
+                                            </div>
+                                        {{else}}
+                                        <!-- INFOBOOTH -->
+                                            {{#if infobooth}}
+                                                <div class="padd20 text-white">
+                                                    <div id="wrapInfobooth" class="wrapAttractions paddTopBottom20">
+                                                        {{#if results}}
+                                                            {{#if results.records}}
+                                                                <div class="row">
+                                                                    <div class="col-100">
+                                                                        {{#each results.records}}
+                                                                            <a href="infobooth.html" data-context='{{stringify this}}'>
+                                                                            <div class="item text-left text-white{{itemClass}}">
+                                                                                <div class="flexbox">
+                                                                                    <div class="image-holder" style="background-image: url({{icon}});"></div>
+                                                                                    <div class="flex1"><i class="f7-icons top50 abs text-blue">chevron_right</i><h3>{{name}}</h3></div>
+                                                                                </div>
+                                                                            </div>
+                                                                            </a>
+                                                                        {{/each}}
+                                                                     </div>
+                                                                </div>
+                                                            {{/if}}
+                                                        {{/if}
+                                                    </div>
+                                                </div>
+                                            {{else}}
+                                                <!-- ATTENDEES -->
+                                                {{#if attendees}}
+                                                    <div class="text-white">
+                                                        <div id="wrapAttendees" class="wrapAttractions">
+                                                            {{#if results}}
+                                                                {{#if results.records}}
+                                                                    <div class="row">
+                                                                        <div class="col-100">
+                                                                        <div class="wrappAlphabetBlock">
+                                                                            {{#each results.records}}
+                                                                                    <a class="loadContext" href="attendee.html" data-context='{{stringify this}}'>
+                                                                                    <div class="item text-left text-white{{itemClass}}">
+                                                                                        <div class="flexbox">
+                                                                                            <img class="circle" data-id="{{attendeeid}}" />
+                                                                                            <div class="flex1"><i class="f7-icons top50 abs text-white">chevron_right</i><h3>{{firstname}} {{lastname}}</h3></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    </a>
+                                                                            {{/each}}
+                                                                        </div>
+                                                                        </div>
+                                                                    </div>
+                                                                {{/if}}
+                                                            {{/if}
+                                                        </div>
+                                                    </div>
+                                                {{else}}
+                                                    <!-- FILES -->
+                                                    {{#if files}}
+                                                        <div class="text-white">
+                                                            <div id="wrapFiles" class="wrapAttractions">
+                                                                {{#if results}}
+                                                                    {{#if results.records}}
+                                                                        <div class="row">
+                                                                            <div class="col-100">
+                                                                                {{#each results.records}}
+                                                                                    <a href="{{filedownloadlink}}" class="external" target="_blank">
+                                                                                    <div class="item text-left text-white">
+                                                                                        <div class="flexbox">
+                                                                                            <div class="flex1"><div class="abs top50 right0">
+                                                                                                <img src="images/download_file_icon.png" alt="Download {{media}}" />
+                                                                                            </div><h3>{{name}}</h3><span class="small">{{media}} - added: {{createdon}}</span></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    </a>
+                                                                                {{/each}}
+                                                                             </div>
+                                                                        </div>
+                                                                    {{/if}}
+                                                                {{/if}
+                                                            </div>
+                                                        </div>
+                                                    {{else}}
+                                                        <!-- SPEAKERS -->
+                                                        {{#if speakers}}
+                                                            <div class="text-white padd20">
+                                                                <div id="wrapAttendees" class="wrapAttractions">
+                                                                    {{#if results}}
+                                                                        {{#if results.records}}
+                                                                            <div class="row">
+                                                                                <div class="col-100">
+                                                                                    {{#each results.records}}
+                                                                                            <a href="speaker.html" data-context='{{stringify this}}'>
+                                                                                            <div class="item text-left text-white">
+                                                                                                <div class="flexbox">
+                                                                                                    <img class="circle" src="{{image}}" alt="{{name}}" />
+                                                                                                    <div class="flex1"><i class="f7-icons top50 abs text-blue">chevron_right</i><h3>{{name}}</h3><span class="small">{{subinformation}}</span></div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            </a>
+                                                                                    {{/each}}
+                                                                                 </div>
+                                                                            </div>
+                                                                        {{/if}}
+                                                                    {{/if}
+                                                                </div>
+                                                            </div>
+                                                        {{else}}
+                                                            <!-- DISCUSSIONS -->
+                                                            {{#if discussion}}
+                                                                <div class="padd20 text-white">
+                                                                    <div id="wrapDiscussions" class="wrapAttractions paddTopBottom20">
+                                                                        {{#if results}}
+                                                                            {{#if results.records}}
+                                                                                <div class="row">
+                                                                                    <div class="col-100">
+                                                                                        {{#each results.records}}
+                                                                                            <a href="discussion.html" data-id="{{id}}" data-count="{{count}}" data-target="topiclist" data-context='{{stringify this}}'>
+                                                                                            <div class="item text-left text-white">
+                                                                                                <div class="flexbox">
+                                                                                                    <div class="flex1"><i class="f7-icons top50 abs text-blue">chevron_right</i><h3>{{name}}</h3><span class="small"><span data-target="topiclist">{{count}}</span> Comments</span></div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            </a>
+                                                                                        {{/each}}
+                                                                                     </div>
+                                                                                </div>
+                                                                            {{/if}}
+                                                                        {{/if}
+                                                                    </div>
+                                                                </div>
+                                                            {{else}}
+                                                                <!-- SURVEYS -->
+                                                                {{#if survey}}
+                                                                    <div class="padd20 text-white">
+                                                                        <div id="wrapSurveys" class="wrapAttractions paddTopBottom20">
+                                                                            {{#if results}}
+                                                                                {{#if results.records}}
+                                                                                    <form action="#" id="frmUserExperienceSurvey" method="post" data-action="handlewithform" class="store-data">
+                                                                                        <div class="hidden">
+                                                                                        <input name="context" value="userExperienceSurvey" type="hidden">
+                                                                                        <input type="hidden" name="aEEE_agendaid" value="0" />
+                                                                                        </div>
+                                                                                        <div class="col-100">
+                                                                                            {{#each results.records}}
+                                                                                                <div class="item text-white bg-darkblue" data-type="surveyquestion" data-answertype="{{answertype}}" data-anchor="squestion{{id}}">
+                                                                                                    <input name="aEOE_answertype{{id}}" value="{{answertype}}" type="hidden">
+                                                                                                    <input name="aEOE_comment{{id}}" type="hidden">
+                                                                                                    <div class="wrapQuestion">
+                                                                                                        <h3 data-questionnumber="{{questionnumber}}">{{question}}</h3>
+                                                                                                            {{#if questiontypes}}
+                                                                                                            <div class="list-block">
+  <ul>
+    <!-- data-back-on-select="true" to close page automatically -->
+    <li><a href="#" class="item-link smart-select" data-back-on-select="true">
+                                                                                                                 <select class="mf-select" size="1" name="aEOE_answertype{{id}}">
+                                                                                                                    <option value="0">-- Select --</option>
+                                                                                                                    {{#each questiontypes}}
+                                                                                                                        
+                                                                                                                        <option value="{{id}}"{{selected}}>{{name}}</option>
+                                                                                                                    {{/each}}
+                                                                                                                    </select>
+                                                                                                            <div class="item-content">
+          <div class="item-inner">
+            <div class="item-title">Car</div>
+          </div>
+        </div></a></li>
+  </ul>
+</div>
+                                                                                                            {{/if}}
+                                                                                                            {{#if iscomment}}
+                                                                                                            <a href="#" data-action="togglemenu" class="button button-fill color-green small" data-toggle="collapse" data-target="#surveyComment{{id}}">+ Comment</a>
+                                                                                                            <div class="collapse{{classActivated}}" id="surveyComment{{id}}">                                                                                                                                                                                                                            <textarea name="aEOE_comment{{id}}" class="mf-textarea">{{comment}}</textarea>
+                                                                                                            </div>
+                                                                                                            {{/if}}
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            {{/each}}
+                                                                                    </div>
+                                                                                    <div class="fRow text-center">
+                                                                                        <button class="button button-fill color-green akalogin">Save & Submit</button>
+                                                                                    </div>
+                                                                                    </form>
+                                                                                {{/if}}
+                                                                            {{/if}
+                                                                        </div>
+                                                                    </div>
+                                                                {{else}}
+                                                                
+                                                                    <!-- USER NOTES -->
+                                                                    {{#if usernotes}}
+                                                                        {{#if results}}
+                                                                            {{#if results.records}}
+                                                                        <div class="padd20 text-white">
+                                                                            <div id="wrapUserNotes" class="wrapAttractions paddTopBottom20 list-block">
+                                                                            <ul>
+                                                                                
+                                                                                        
+                                                                                        {{#each results.records}}
+                                                                                            
+                                                                                                <li class="swipeout" data-id="{{id}}">
+                                                                                                    <div class="swipeout-content item-content item text-left text-white">
+                                                                                                        <a class="relative" href="note.html" data-ignore-cache="true" data-id="{{id}}" data-context='{{stringify this}}'>
+                                                                                                            <div class="flexbox">
+                                                                                                                <div class="flex1"><i class="f7-icons top50 abs text-blue">chevron_right</i><h3>{{name}}</h3><span class="small">Modified: {{modifieddate}} - {{modifiedtime}}</span></div>
+                                                                                                            </div>
+                                                                                                        </a>
+                                                                                                    </div>
+                                                                                            <div class="swipeout-actions-right">
+                                                                                                <!-- We add data-close-on-cancel attribute to close swipeout automatically -->
+                                                                                                <a href="#" class="swipeout-nodelete bg-red" data-close-on-cancel="true" data-id="{{id}}" data-context="deleteAPPUserNote">Delete</a>
+                                                                                            </div>
+                                                                                                </li>
+                                                                                        {{/each}}
+                                                                                       
+                                                                                            
+                                                                                    
+                                                                                </ul>
+                                                                                {{#if results.records}}
+                                                                                    <div class="paddTopBottom20 text-italic text-center">Swipe left on a note to delete it.</div>
+                                                                                {{/if}}
+                                                                            </div>
+                                                                        </div>
+                                                                            {{else}}
+                                                                                
+                                                                                    <div class="abs top50 left50 fullwidth">
+                                                                                        <div class="text-center text-white">{{firstname}}, you have not added any<br />
+                                                                                    notes to this section.<br />Please click the + icon in the top right<br />corner to add a note.</div>
+                                                                                    </div>
+                                                                            {{/if}}                                                                       
+                                                                        {{/if}
+                                                                    {{else}}
+                                                                    
+                                                                        <!-- AGENDAS -->
+                                                                        {{#if agenda}}
+                                                                            <div class="text-white">
+                                                                                <div id="wrapAgendas" class="wrapAttractions">
+                                                                                    {{#if results}}
+                                                                                        {{#if results.dates}}
+                                                                                            {{#each results.dates}}
+                                                                                                <div class="wrapSingleAgendaDateBlock" data-ddate="{{@key}}">
+                                                                                                    {{#if this.records}}
+                                                                                                        <div class="wrapAgendaDay text-left padd10">{{dlongdate}}</div>
+                                                                                                        {{#each this.records}}
+                                                                                                            <a href="{{link}}" data-id="{{id}}" data-eventid="{{eventid}}" data-sectionid="{{sectionid}}" data-context='{{stringify this}}'>
+                                                                                                        <div class="item text-left text-white{{classItem}}{{classItem1}}">
+                                                                                                            <div class="flexbox">
+                                                                                                                <div class="wrapTime text-center"><div class="abs top50 fullwidth">{{stime}}</div></div>
+                                                                                                                <div class="flex1">
+                                                                                                                <i class="f7-icons top50 abs">chevron_right</i>
+                                                                                                                <h3>{{description}}</h3>
+                                                                                                                {{#if speakername}}
+                                                                                                                    <p>{{speakername}}</p>
+                                                                                                                {{/if}}
+                                                                                                                {{#if name}}    
+                                                                                                                    <span class="small"><i class="fa fa-map-marker" aria-hidden="true"></i> {{name}}</span>
+                                                                                                                {{/if}}   
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        </a>
+                                                                                                        {{/each}}
+                                                                                                    {{/if}}
+                                                                                                </div>
+                                                                                            {{/each}}        
+
+                                                                                        {{/if}}
+                                                                                    {{/if}      
+                                                                                </div>
+                                                                            </div>
+                                                                        {{else}}
+                                                                        
+                                                                        <!-- POLLS -->
+                                                                            {{#if polls}}
+                                                                                <div class="paddLeftRight20 text-white">
+                                                                                    <div id="wrapPolls" class="wrapAttractions">
+                                                                                        {{#if results}}
+                                                                                            {{#if results.records}}
+                                                                                                {{#if results.records.online}}
+                                                                                                    <div id="wrapLivePollRecords">
+                                                                                                        <div class="padd10"></div>
+                                                                                                        <div class="row">
+                                                                                                            <div class="col-100" data-target="livepolllist">
+                                                                                                                {{#each results.records.online}}
+                                                                                                                    <a href="poll.html" data-id="{{id}}" data-target="topiclist" data-context='{{stringify this}}'>
+                                                                                                                    <div class="item text-left text-white" {{dataanswered}}>
+                                                                                                                        <div class="flexbox">
+                                                                                                                            <div class="flex1"><i class="f7-icons top50 abs">chevron_right</i><h3>{{name}}</h3>
+                                                                                                                                <span class="small text-white">{{postedbytext}}</span>
+                                                                                                                            </div>        
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                    </a>
+                                                                                                                {{/each}}
+                                                                                                             </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    {{#if results.livepollmanager}}
+                                                                                                    <div id="wrapLivePollAddNew" class="hidden wrapQuestion activated">                                                                                                                                                                                                                             <div class="title paddTopBottom20">
+                                                                                                            <h3>{{results.firstname}}, to add a new live poll to this event please fill out the fields below.</h3>
+                                                                                                            </div> 
+                                                                                                            <form action="#" id="frmAddNewLivePoll" method="post" data-action="handlewithform">
+                                                                                                            <div class="hidden">
+                                                                                                                <input type="hidden" name="context" value="addNewLivePoll" />
+                                                                                                                <input type="hidden" name="aEOE_eventid" value="{{results.eventid}}" />
+                                                                                                                <input type="hidden" name="aEOE_sectionid" value="{{results.sectionid}}" />    
+                                                                                                            </div>
+                                                                                                            <div class="fRow">
+                                                                                                                <div class="mf-textarea"><textarea name="aEOE_name" class="mf-textarea" placeholder="Type your question here." required="required"></textarea></div>
+                                                                                                            </div>
+                                                                                                            <div class="fRow">
+                                                                                                                <div class="mf-input"><input type="text" class="mf-input" name="aEOE_option1" placeholder="Option A" required="required" /></div>
+                                                                                                            </div>
+                                                                                                            <div class="fRow">
+                                                                                                                <div class="mf-input"><input type="text" class="mf-input" name="aEOE_option2" placeholder="Option B" required="required" /></div>
+                                                                                                            </div>
+                                                                                                            <div class="fRow">
+                                                                                                                <div class="mf-input"><input type="text" class="mf-input" name="aEOE_option3" placeholder="Option C" /></div>
+                                                                                                            </div>
+                                                                                                            <div class="fRow">
+                                                                                                                <div class="mf-input"><input type="text" class="mf-input" name="aEOE_option4" placeholder="Option D" /></div>
+                                                                                                            </div>
+                                                                                                            <div class="fRow">
+                                                                                                                <div class="mf-input"><input type="text" class="mf-input" name="aEOE_option5" placeholder="Option E" /></div>
+                                                                                                            </div>
+                                                                                                            <div class="fRow"><button class="button btn btn-green">SUBMIT & POST LIVE</button></div>
+                                                                                                            <div class="small text-center text-orange">
+                                                                                                            Please ensure that the above poll question is correct. Once you press submit the poll will be placed LIVE.
+                                                                                                            </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </form>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+                                                      {{/if}}                                                                                                                                                                                                                                          
+                                                                                                {{/if}}
+                                                                                            {{/if}}
+                                                                                        {{/if}
+                                                                                    </div>
+                                                                                </div>
+                                                                            {{else}}
+                                                                                
+                                                                                <!-- CONTACTS -->
+                                                                                {{#if contacts}}
+                                                                                    <div class="text-white">
+                                                                                        <div id="wrapContacts" class="wrapAttractions">
+                                                                                        <div class="padd20">{{introtext}}</div>
+                                                                                            {{#if results}}
+                                                                                                {{#if results.records}}
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-100">
+                                                                                                            {{#each results.records}}
+                                                                                                                    <a class="external" href="mailto:{{email}}">
+                                                                                                                    <div class="item text-left text-white">
+                                                                                                                        <div class="flexbox">
+                                                                                                                            <img class="circle" src="{{image}}" alt="{{name}}" />
+                                                                                                                            <div class="flex1"><div class="abs top50"><img src="images/emailicon.png" alt="" /></div><h3>{{name}}</h3><span class="small">{{position}}</span></div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                    </a>
+                                                                                                            {{/each}}
+                                                                                                         </div>
+                                                                                                    </div>
+                                                                                                {{/if}}
+                                                                                            {{/if}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                {{else}}
+                                                                                    
+                                                                                    <!-- SPONSORS -->
+                                                                                    {{#if sponsors}}
+                                                                                        <div class="padd20 text-white">
+                                                                                            <div id="wrapSponsors" class="wrapAttractions paddTopBottom20">
+                                                                                                {{#if results}}
+                                                                                                    {{#if results.records}}
+                                                                                                        <div class="row">
+                                                                                                            <div class="col-100">
+                                                                                                                {{#each results.records}}
+                                                                                                                    <div>
+                                                                                                                        <h3>{{@key}}</h3>
+                                                                                                                    </div>
+                                                                                                                    <div class="bodytext">
+                                                                                                                    <div class="padd20"></div>
+                                                                                                                    {{#each this}}
+                                                                                                                        {{#if url}}
+                                                                                                                        <a class="external" href="{{url}}">   
+                                                                                                                        {{/if}}   
+                                                                                                                        <div class="item text-center text-white">
+                                                                                                                            <img class="responsive-img" src="{{image}}" alt="{{name}}" />
+                                                                                                                        </div>
+                                                                                                                        {{#if url}}
+                                                                                                                        </a>   
+                                                                                                                        {{/if}}
+                                                                                                                    {{/each}}
+                                                                                                                        </div>
+                                                                                                                {{/each}} 
+                                                                                                             </div>
+                                                                                                        </div>
+                                                                                                    {{/if}}
+                                                                                                {{/if}
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    {{else}}
+                                                                                        
+                                                                                    {{/if}}   
+
+                                                                                {{/if}}    
+                                                                            
+                                                                            {{/if}}
+
+                                                                        {{/if}}
+                                                                    
+                                                                    {{/if}}
+
+                                                                {{/if}}
+                                                            {{/if}}
+                                                        
+                                                        {{/if}}
+                                                    {{/if}}
+
+                                                {{/if}}
+                                            {{/if}}
+                                        
+                                        {{/if}}
+                                    {{/if}}
+                                {{/if}}
+                            </div>
+                        </div>
+                    </div>
+                </script>
+                
+                
+                
+            
+        </div>
+        
+      </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    
+    <script type="text/javascript" src="js/chart.min.js"></script>
+    <script type="text/javascript" src="js/progressbar.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+  
+
+    <div class="popup-overlay"></div>
+  </body>
+</html>

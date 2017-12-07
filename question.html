@@ -1,0 +1,57 @@
+<div class="page page-survey" data-page="question">
+    <div class="overlayBlue">
+        <div id="topHeader" class="topHeader abs">
+            <div class="businessConf2 bg-dark-opacity text-right height44">
+            <div class="abs hasBackLink">
+                <a href="#" class="link back-link back" data-templatename="welcomeTemplate"><img src="images/goback_arrow.png" alt="Back" /></a>
+            </div>    
+            <div class="text-center text-white padd10"><strong>Event Question</strong></div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div id="agendaQuestions">
+                <div class="personalBlock text-center text-white">
+                    <div class="box effect2">
+                        <p>Ask a question or click the thumbs
+                up to "like it" and boost it’s popularity!</p>
+                        <div class="padd10">
+                            <div class="row no-gutter">
+                                <div class="col-10 tablet-30"></div>
+                                <div class="col-80 tablet-40"><a href="#" class="button button-fill color-green" data-action="joindiscussion" data-target="#wrapQuestionTextHolder">Ask a Question</a></div>
+                                <div class="col-10 tablet-30"></div>
+                              </div>
+                        </div>
+                        <div id="wrapQuestionTextHolder" class="wrapQuestionTextHolder">
+                    <form action="#" id="frmAddNewAgendaQuestion" method="post" data-action="handlewithform">
+                        <div class="hidden">
+                            <input name="context" value="addNewAgendaQuestion" type="hidden">
+                            <input name="aEOE_agendaid" value="{{../id}}" type="hidden">
+                        </div>
+                        <div id="topicText" class="topicText"><textarea name="aEOE_content" id="aEOE_content" class="mf-textarea" placeholder="Type your question here..." required="required"></textarea></div>
+                        <div class="text-center">
+                            <div class="padd10">
+                                <div class="row no-gutter">
+                                    <div class="col-10 tablet-30"></div>
+                                    <div class="col-80 tablet-40"><button class="button button-fill color-green">Post Question</button></div>
+                                    <div class="col-10 tablet-30"></div>
+                                  </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                    </div>
+                </div>
+                
+                <div class="padd20 text-white">
+                    <div id="wrapAgendaQuestions" class="wrapAttractions paddTopBottom20" data-id="{{id}}">
+                        <div class="paddTopBottom20" data-target="questionlist">
+                            
+                        </div>
+                        <span id="bottomOfMessages"></span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,109 @@
+<div class="page" data-page="me">
+    <div class="overlayBlue">
+        <form action="#" method="post" id="frmEditProfile" data-action="handlewithform">
+            <div class="hidden">
+                <input type="hidden" name="context" value="editProfileDetails" />
+                <input type="hidden" name="aEOE_eventid" value="{{eventid}}" />
+            </div>
+        <div id="bottomHeader" class="bottomHeader abs">
+            <div>
+                <div class="bg-magenta text-center height54">
+                    <div class="padd10">
+                        <div class="row no-gutter">
+                            <div class="col-10 tablet-30"></div>
+                            <div class="col-80 tablet-40"><button class="button button-fill color-green">SAVE DETAILS</button></div>
+                            <div class="col-10 tablet-30"></div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="topHeader" class="topHeader abs">
+            <div class="businessConf2 bg-dark-opacity text-right height44">
+            <div class="abs hasBackLink">
+                <a href="#" class="link back-link back" data-templatename="welcomeTemplate"><img src="images/goback_arrow.png" alt="Back" /></a>
+            </div>
+            <div class="text-center text-white padd10"><strong>Edit Profile details</strong></div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="text-white">
+                <div id="wrapME" class="wrapAttractions paddTopBottom20 text-center">
+                    <div class="personalBlock">
+                        <div class="box effect2">
+                            <div id="container"></div>
+                            <div id="preview1" class="circle fileUploader">
+                                <div class="btn btn-upload"><input type="file" name="new-image" id="new-image" accept="image/*"></div>
+                                {{#if image}}
+                                <img src="{{image}}" alt="Upload Photo" />
+                                {{else}}
+                                <div class="abs top50 left50">Upload<br />Photo</div>
+                                {{/if}}
+                            </div>
+                            <h2>{{firstname}} {{lastname}}</h2>
+                            <p>{{jobtitle}}</p>
+                            <p>{{functionarea}}</p>
+                        </div>
+                    </div>
+                    <div class="socialBlock">
+                        <div class="box effect2">
+                            <div class="fRow">
+                                <div class="flexbox">
+                                    <div class="icon facebook" style="background-image: url('images/facebook.png')"></div>
+                                    <div class="flex1"><input type="text" class="mf-input" name="aEOE_facebook" value="{{facebook}}" /></div>
+                                </div>
+                            </div>
+                            <div class="fRow">
+                                <div class="flexbox">
+                                    <div class="icon" style="background-image: url('images/twitter.png')"></div>
+                                    <div class="flex1"><input type="text" class="mf-input" name="aEOE_twitter" value="{{twitter}}" /></div>
+                                </div>
+                            </div>
+                            <div class="fRow">
+                                <div class="flexbox">
+                                    <div class="icon" style="background-image: url('images/linkedin.png')"></div>
+                                    <div class="flex1"><input type="text" class="mf-input" name="aEOE_linkedin" value="{{linkedin}}" /></div>
+                                </div>
+                            </div>
+                            <div class="fRow">
+                                <div class="flexbox">
+                                    <div class="icon" style="background-image: url('images/emailicon.png')"></div>
+                                    <div class="flex1"><input type="email" class="mf-input" name="aEOE_email" value="{{email}}" readonly="readonly" /></div>
+                                </div>
+                            </div>
+                            <div class="fRow">
+                                <div class="list-block text-left">
+                                    <label class="label-checkbox item-content">
+                                        <input type="checkbox" class="mf-checkbox" value="1" name="aEOE_isemailshown" {{isemailshown}}/>
+                                        <div class="item-media">
+                                            <i class="icon icon-form-checkbox"></i>
+                                        </div>
+                                        <div class="item-inner1">
+                                            <div class="item-title">Make Email Public</div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {{#if results}}
+                        {{#if results.records}}
+                            <div id="wrapSurveys" class="wrapQuestions wrapAttractions padd20">
+                                {{#each results.records}}
+                                    <div class="item text-center text-white">
+                                        <div class="wrapQuestion">
+                                            <h3 data-questionnumber="{{ord}}">{{question}}</h3>
+                                            <textarea name="aEOE_comment{{id}}" class="mf-textarea">{{answer}}</textarea>
+                                        </div>
+                                    </div>
+                                {{/each}}
+                            </div>
+                        {{/if}}
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+            </form>
+    </div>
+</div>

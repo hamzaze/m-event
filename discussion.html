@@ -1,0 +1,63 @@
+<div class="page page-discussion" data-page="discussion">
+    <div class="overlayBlue">
+        <div id="topHeader" class="topHeader abs">
+            <div class="businessConf2 bg-dark-opacity text-right height44">
+            <div class="abs hasBackLink">
+                <a href="#" class="link back-link back" data-templatename="welcomeTemplate"><img src="images/goback_arrow.png" alt="Back" /></a>
+            </div>
+            <div class="text-center text-white padd10"><strong>Discussion</strong></div>
+            </div>
+        </div>
+        <div id="bottomHeader" class="bottomHeader abs">
+            <div id="wrapTopicTextHolder" class="wrapTopicTextHoder abs">
+                <form action="#" id="frmAddNewPostToTopic" method="post" data-action="handlewithform">
+                    <div class="hidden">
+                        <input type="hidden" name="context" value="addNewPostToTopic" />
+                        <input type="hidden" name="aEOE_topicid" value="{{id}}" />
+                    </div>
+                    <div id="topicText" class="topicText"><textarea name="aEOE_content" id="aEOE_content" class="mf-textarea" placeholder="Type something..." required="required"></textarea></div>
+                    <div class="bg-magenta text-center height54">
+                        <div class="padd10">
+                            <div class="row no-gutter">
+                                <div class="col-10 tablet-30"></div>
+                                <div class="col-80 tablet-40"><button class="button button-fill color-green">Post to Discussion Board</button></div>
+                                <div class="col-10 tablet-30"></div>
+                              </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="bg-magenta text-center height54">
+                <div class="padd10">
+                    <div class="row no-gutter">
+                        <div class="col-10 tablet-30"></div>
+                        <div class="col-80 tablet-40"><a href="#" class="button button-fill color-green" data-action="joindiscussion" data-target="#wrapTopicTextHolder">Join the Discussion!</a></div>
+                        <div class="col-10 tablet-30"></div>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="padd20 text-white">
+                <div id="wrapDiscussionPosts" class="wrapAttractions paddTopBottom20" data-id="{{id}}">
+                    <h3>{{name}}</h3>
+                    <div class="bodytext paddTopBottom20">
+                        {{#if results}}
+                            {{#if results.records}}
+                                {{#each results.records}}
+                                    <div class="item text-left">
+                                        <div class="flexbox">
+                                            <a href="attendee.html" data-context='{{stringify this}}'><img class="circle" src="{{image}}" alt="{{firstname}} {{lastname}}" /></a>
+                                            <div class="flex1"><span class="small text-white abs">Posted on: {{datecreatedon}} @ {{timecreatedon}}</span><p class="small">{{firstname}} {{lastname}} Posted:</p><p>{{content}}</p></div>
+                                        </div>
+                                    </div>
+                                {{/each}}
+                            {{/if}}
+                        {{/if}}
+                    </div>
+                    <span id="bottomOfMessages"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="page page-agenda" data-page="agenda">
+    <div class="overlayBlue">
+        <div id="topHeader" class="topHeader abs">
+            <div class="businessConf2 bg-darkblue text-right height44">
+            <div class="abs hasBackLink">
+                <a href="#" class="link back-link back" data-templatename="welcomeTemplate"><img src="images/goback_arrow.png" alt="Back" /></a>
+            </div>
+            <div class="text-center text-white padd10"><strong>Agenda Details</strong></div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="wrapAgendaDetails">
+                {{#if isaskorsessionfeedback}}
+                <div class="wrapAdditionalButtons">
+                    <div class="row">
+                        {{#if askenabled}}
+                            <a class="small text-center btn btn-blue1 {{btnClass}}" href="question.html" data-context='{{stringify this}}'>Ask Question</a>
+                        {{/if}}
+                        {{#if notes}}
+                            <a class="small text-center btn btn-blue2 {{btnClass}}" href="#" data-action="addedititem" data-context="wrapCustomPage" data-id="9" data-eventid="{{eventid}}">+ Add Note</a>
+                        {{/if}}
+                        {{#if sessionfeedback}}
+                            {{#if agendasurvey}}
+                            <a data-target="agendasurveybtn" class="small text-center btn btn-blue3 {{btnClass}}" href="survey.html" data-context='{"id": "{{id}}", "eventid": "{{eventid}}", "sectionid": "{{sectionid}}"}'>Feedback</a>
+                            {{/if}}
+                        {{/if}}
+                        <div class="noFloat"></div>
+                    </div>
+                </div>
+                {{/if}}
+                <div class="personalBlock text-center text-white">
+                    <div class="box effect2">
+                        <div class="padd10"></div>
+                        <h2>{{description}}</h2>
+                        {{if name}}
+                            <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{name}}</p>
+                        {{/if}}
+                        <p>{{stimeA}} to {{etimeA}}</p>
+                    </div>
+                </div>
+                <div>
+                <div class="text-white paddTopBottom20">
+                    <div data-target="speakerdetails">
+                        
+                    </div>
+                    
+                    {{#if image}}
+                    <div class="padd20 hasShadow text-center" data-target="mapphoto"><a href="#" data-src="{{image}}" data-action="openphotoinpopup"></a></div>
+                    {{/if}}
+                </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
