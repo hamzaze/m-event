@@ -1,89 +1,27 @@
 {
   "project_info": {
-    "project_number": "931972740218",
-    "firebase_url": "https://myoevents-push-2017.firebaseio.com",
-    "project_id": "myoevents-push-2017",
-    "storage_bucket": "myoevents-push-2017.appspot.com"
+    "project_number": "906528609766",
+    "firebase_url": "https://m-event-push-notifications.firebaseio.com",
+    "project_id": "m-event-push-notifications",
+    "storage_bucket": "m-event-push-notifications.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:931972740218:android:0bf1f94f27f24267",
+        "mobilesdk_app_id": "1:906528609766:android:a7d9410bf3a273c6",
         "android_client_info": {
-          "package_name": "com.myoevents.myoevents"
+          "package_name": "com.mevent.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "931972740218-2mj52hvth9c5jn21pmnltk61n2vpm7ap.apps.googleusercontent.com",
+          "client_id": "906528609766-pnt1p5i4c84p497vocg82t0esa15hbm4.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC_ZIJxZ2TlBTaqzN4rqV0PcOpXJWDj0PE"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:931972740218:android:da287d5ee72845ba",
-        "android_client_info": {
-          "package_name": "com.myoevents.app"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "931972740218-2mj52hvth9c5jn21pmnltk61n2vpm7ap.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyC_ZIJxZ2TlBTaqzN4rqV0PcOpXJWDj0PE"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:931972740218:android:a81e12506cad4cc3",
-        "android_client_info": {
-          "package_name": "com.myoevents.app2"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "931972740218-2mj52hvth9c5jn21pmnltk61n2vpm7ap.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyC_ZIJxZ2TlBTaqzN4rqV0PcOpXJWDj0PE"
+          "current_key": "AIzaSyDE2JVvxkSWZGupeJCzBJFQXBn95tIxf5o"
         }
       ],
       "services": {

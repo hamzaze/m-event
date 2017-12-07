@@ -287,14 +287,14 @@ div.ajaxLoader > .fineloader{
 
 .overlayBlue{
     height: 100%;
-    background: rgba(166,67,62,0.66);
-    background: -moz-linear-gradient(top, rgba(166,67,62,0.66) 0%, rgba(166,67,62,0.73) 15%, rgba(13,80,128,0.96) 68%, rgba(13,80,128,1) 77%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(166,67,62,0.66)), color-stop(15%, rgba(166,67,62,0.73)), color-stop(68%, rgba(13,80,128,0.96)), color-stop(77%, rgba(13,80,128,1)));
-    background: -webkit-linear-gradient(top, rgba(166,67,62,0.66) 0%, rgba(166,67,62,0.73) 15%, rgba(13,80,128,0.96) 68%, rgba(13,80,128,1) 77%);
-    background: -o-linear-gradient(top, rgba(166,67,62,0.66) 0%, rgba(166,67,62,0.73) 15%, rgba(13,80,128,0.96) 68%, rgba(13,80,128,1) 77%);
-    background: -ms-linear-gradient(top, rgba(166,67,62,0.66) 0%, rgba(166,67,62,0.73) 15%, rgba(13,80,128,0.96) 68%, rgba(13,80,128,1) 77%);
-    background: linear-gradient(to bottom, rgba(166,67,62,0.66) 0%, rgba(166,67,62,0.73) 15%, rgba(13,80,128,0.96) 68%, rgba(13,80,128,1) 77%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6433e', endColorstr='#0d5080', GradientType=0 );
+    background: rgba(24,47,65,1);
+    background: -moz-linear-gradient(top, rgba(24,47,65,1) 0%, rgba(24,47,65,1) 17%, rgba(58,110,143,1) 68%, rgba(58,110,143,1) 77%, rgba(58,110,143,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(24,47,65,1)), color-stop(17%, rgba(24,47,65,1)), color-stop(68%, rgba(58,110,143,1)), color-stop(77%, rgba(58,110,143,1)), color-stop(100%, rgba(58,110,143,1)));
+    background: -webkit-linear-gradient(top, rgba(24,47,65,1) 0%, rgba(24,47,65,1) 17%, rgba(58,110,143,1) 68%, rgba(58,110,143,1) 77%, rgba(58,110,143,1) 100%);
+    background: -o-linear-gradient(top, rgba(24,47,65,1) 0%, rgba(24,47,65,1) 17%, rgba(58,110,143,1) 68%, rgba(58,110,143,1) 77%, rgba(58,110,143,1) 100%);
+    background: -ms-linear-gradient(top, rgba(24,47,65,1) 0%, rgba(24,47,65,1) 17%, rgba(58,110,143,1) 68%, rgba(58,110,143,1) 77%, rgba(58,110,143,1) 100%);
+    background: linear-gradient(to bottom, rgba(24,47,65,1) 0%, rgba(24,47,65,1) 17%, rgba(58,110,143,1) 68%, rgba(58,110,143,1) 77%, rgba(58,110,143,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#182f41', endColorstr='#3a6e8f', GradientType=0 );
     z-index: 1;
 }
 

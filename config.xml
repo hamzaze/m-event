@@ -1,9 +1,9 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="com.myoevents.app2" version="1.1.6">
-  <name>My OEvents</name>
-  <description>My OEvents</description>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="com.mevent.app" version="1.1.0">
+  <name>M-Event</name>
+  <description>M-Event</description>
   <author href="http://www.intellicomstudios.net" email="info@intellicomstudios.net">Robin Ozolins</author>
   <content src="index.html" />
-    <access origin="http://www.myoevents.com" />
+    <access origin="http://www.mevent.ca" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />

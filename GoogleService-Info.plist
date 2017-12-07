@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>931972740218-30vuptj51fuqr7t19e9d0v4kvvaqpd7g.apps.googleusercontent.com</string>
+	<string>906528609766-pk43gm7k62386gttm8jp5cf2r4j4pqnb.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.931972740218-30vuptj51fuqr7t19e9d0v4kvvaqpd7g</string>
+	<string>com.googleusercontent.apps.906528609766-pk43gm7k62386gttm8jp5cf2r4j4pqnb</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCXO7n5GhU7oEb3hXP9sdgJ_QF-8RndM0E</string>
+	<string>AIzaSyCmhbll_ohVnAjvD8MnU73bS4UtS3OGWZk</string>
 	<key>GCM_SENDER_ID</key>
-	<string>931972740218</string>
+	<string>906528609766</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.myoevents.app</string>
+	<string>com.mevent.app</string>
 	<key>PROJECT_ID</key>
-	<string>myoevents-push-2017</string>
+	<string>m-event-push-notifications</string>
 	<key>STORAGE_BUCKET</key>
-	<string>myoevents-push-2017.appspot.com</string>
+	<string>m-event-push-notifications.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:931972740218:ios:da287d5ee72845ba</string>
+	<string>1:906528609766:ios:a7d9410bf3a273c6</string>
 	<key>DATABASE_URL</key>
-	<string>https://myoevents-push-2017.firebaseio.com</string>
+	<string>https://m-event-push-notifications.firebaseio.com</string>
 </dict>
 </plist>

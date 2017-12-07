@@ -40,7 +40,7 @@ var mainView = myApp.addView('.view-main', {
 
 var isAjaxLoaded=false;
 var isAjaxLoadedLoop=false;
-var pathToAjaxDispatcher="http://www.myoevents.com/myevents/php/ajaxDispatcher1.php";
+var pathToAjaxDispatcher="http://www.mevent.ca/events/php/ajaxDispatcher1.php";
 var reloadDiscussionEvery=15000;
 var autoloadWelcomeTemplateEvery=1000*60*3;
 
