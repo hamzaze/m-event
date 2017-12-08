@@ -985,7 +985,7 @@ $$(document).on("click", "[data-action='pollitem']", function(e){
 $$(document).on("click", "a[data-action='togglemenu']", function(e){
     e.preventDefault();
     var $this=$$(this);
-    $$($this.attr("data-target")).toggleClass("activated");
+    $$("div.page.page-on-center #topHeader > " + $this.attr("data-target")).toggleClass("activated");
 });
 
 $$(document).on("click", "a[data-action='toggleform']", function(e){

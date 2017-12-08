@@ -42,7 +42,11 @@
                                                         <div>{{dmonth}}</div>
                                                         <div>{{dday}}</div>
                                                     </div>
-                                                    <div class="flex1"><p class="small">{{stime}}</p><h3>{{description}}</h3><span class="small"><i class="fa fa-map-marker" aria-hidden="true"></i> {{name}}</span></div>
+                                                    <div class="flex1"><p class="small">{{stime}}</p><h3>{{description}}</h3>
+                                                    {{#if name}}    
+                                                        <span class="small"><i class="fa fa-map-marker" aria-hidden="true"></i> {{name}}</span>
+                                                    {{/if}}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </a>
