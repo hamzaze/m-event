@@ -1142,6 +1142,7 @@ $$(document).on("click","a.swipeout-nodelete", function(e){
 $$(document).on("click", "[data-action='addedititem']", function(e){
     e.preventDefault();
     var $this=$$(this);
+    $this.addClass("animationon");
     
     if($this.attr("data-context")=="wrapAddNewUserNote"){
         if($this.attr("data-sentonce")==0){
@@ -1205,6 +1206,7 @@ $$(document).on("click", "[data-action='addedititem']", function(e){
                if(data["success"]==1){
                    if(postData["context"]=="wrapCustomPage"){
                        setTimeout(function(){
+                           $this.removeClass("animationon");
                             $$("#superTransitionEffect").addClass("zeroopacity");
                             
                                     mainView.router.load({
