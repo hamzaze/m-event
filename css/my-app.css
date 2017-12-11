@@ -1371,7 +1371,8 @@ div#wrapDiscussions.wrapAttractions div.item h3{
 }
 
 div#wrapPolls.wrapAttractions div.item{
-    height: 70px;
+    height: auto;
+    padding: 10px 0;
 }
 
 div.wrapPieChart{

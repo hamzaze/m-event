@@ -732,12 +732,13 @@
                                                                                 <div class="paddLeftRight20 text-white">
                                                                                     <div id="wrapPolls" class="wrapAttractions">
                                                                                         {{#if results}}
-                                                                                            {{#if results.records}}
-                                                                                                {{#if results.records.online}}
-                                                                                                    <div id="wrapLivePollRecords">
+                                                                                            <div id="wrapLivePollRecords">
                                                                                                         <div class="padd10"></div>
                                                                                                         <div class="row">
                                                                                                             <div class="col-100" data-target="livepolllist">
+                                                                                            {{#if results.records}}
+                                                                                                {{#if results.records.online}}
+                                                                                                    
                                                                                                                 {{#each results.records.online}}
                                                                                                                     <a href="poll.html" data-id="{{id}}" data-target="topiclist" data-context='{{stringify this}}'>
                                                                                                                     <div class="item text-left text-white" {{dataanswered}}>
@@ -749,7 +750,10 @@
                                                                                                                     </div>
                                                                                                                     </a>
                                                                                                                 {{/each}}
-                                                                                                             </div>
+                                                                                                             
+                                                                                                {{/if}}
+                                                                                            {{/if}}
+                                                                                                    </div>
                                                                                                         </div>
                                                                                                     </div>
                                                                                                     {{#if results.livepollmanager}}
@@ -786,8 +790,8 @@
                                                                                                             </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </form>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             </div>
                                                       {{/if}}                                                                                                                                                                                                                                          
-                                                                                                {{/if}}
-                                                                                            {{/if}}
+                                                                                                
+                                                                                            
                                                                                         {{/if}
                                                                                     </div>
                                                                                 </div>
