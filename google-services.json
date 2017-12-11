@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:906528609766:android:a7d9410bf3a273c6",
+        "mobilesdk_app_id": "1:906528609766:android:06745e773089a368",
         "android_client_info": {
-          "package_name": "com.mevent.app"
+          "package_name": "com.meridianleadershipconference.meridianapp"
         }
       },
       "oauth_client": [

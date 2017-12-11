@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>906528609766-pk43gm7k62386gttm8jp5cf2r4j4pqnb.apps.googleusercontent.com</string>
+	<string>906528609766-i57jpnltkcga4snauf3v8qop9eu182am.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.906528609766-pk43gm7k62386gttm8jp5cf2r4j4pqnb</string>
+	<string>com.googleusercontent.apps.906528609766-i57jpnltkcga4snauf3v8qop9eu182am</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCmhbll_ohVnAjvD8MnU73bS4UtS3OGWZk</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.mevent.app</string>
+	<string>com.meridianleadershipconference.meridianapp</string>
 	<key>PROJECT_ID</key>
 	<string>m-event-push-notifications</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:906528609766:ios:a7d9410bf3a273c6</string>
+	<string>1:906528609766:ios:06745e773089a368</string>
 	<key>DATABASE_URL</key>
 	<string>https://m-event-push-notifications.firebaseio.com</string>
 </dict>
