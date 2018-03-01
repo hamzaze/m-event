@@ -448,6 +448,12 @@ DP.validateForm = function(){
                                 }else{
                                     setCookie("hhUserLoggedInApp", data["token"], 7);
                                     if(data["results"]["eventname"]){
+                                        
+                                        if(data["results"]["welcomemessagefirsttime"]){
+                                            console.log("welcomemessagefirsttime");
+                                            show_overlay(data["results"]["welcomemessagefirsttime"]);
+                                        }
+                                        
                                         //Send registration ID + Event ID pair for push notifications
                                         setupPush(data["results"]["eventid"]);
                                     }
@@ -793,6 +799,12 @@ function displayInfo_deprecated(a, b){
     });
 }
 
+function show_overlay(content){
+    if($$("div.page.page-on-center div.page-content > #wrapWelcomeBlocks").length>0){
+       $$("div.page.page-on-center div.page-content").prepend($$(content)); 
+    }
+}
+
 function displayPromptForUserNote($this){
     myApp.prompt('Please give a title to this note.', 'New Note', function (value) {
             if(value!=""){
@@ -837,6 +849,20 @@ function getCookie(cname) {
         }
     }
     return "";
+}
+
+function checkEventFirstTimeCookie(id) {
+    var eventid = getCookie("hhUserLoggedInWhatEventFirstTime"+id);
+    if (eventid != "") {
+        if(eventid==id){
+            return eventid;
+        }else{
+            return false;
+        }
+        
+    } else {
+        return false;
+    }
 }
 
 function checkEventCookie() {
@@ -985,7 +1011,7 @@ $$(document).on("click", "[data-action='pollitem']", function(e){
 $$(document).on("click", "a[data-action='togglemenu']", function(e){
     e.preventDefault();
     var $this=$$(this);
-    $$("div.page.page-on-center #topHeader > " + $this.attr("data-target")).toggleClass("activated");
+    $$("div.page.page-on-center " + $this.attr("data-target")).toggleClass("activated");
 });
 
 $$(document).on("click", "a[data-action='toggleform']", function(e){
@@ -1151,6 +1177,18 @@ $$(document).on("click", "[data-action='addedititem']", function(e){
         }
     }
     
+    if($this.attr("data-context")=="forceLoadAttendee"){
+        mainView.router.load({
+            url: "attendee.html",
+            reload: true,
+            animatePages: true,
+            context: JSON.parse($this.attr("data-forcedcontext"))
+        });
+        return false;
+        //$$("#wrapAttendees [data-target='singleattendeeitem'][data-id='"+$this.attr("data-id")+"']").trigger("click");
+        return false;
+    }
+    
     if($this.attr("data-context")=="wrapAddNewLivePoll"){
         $$("#wrapLivePollRecords").toggleClass("hidden");
         $$("#wrapLivePollAddNew").toggleClass("hidden");
@@ -1236,6 +1274,8 @@ $$(document).on("click", "[data-action='addedititem']", function(e){
                         $this.attr("data-title", "");
                         $this.attr("data-sentonce", 0);
                         $$("#wrapUserNotes > ul").prepend($$(data["content"]));
+                        $$("#wrapUserNotes").removeClass("hidden");
+                        $$("[data-target='hideifnotes']").addClass("hidden");
                     }else if(postData["context"]=="sendUserNoteToUserMail"){
                         displayInfo(data["message"], $$("body"));
                     }else if(postData["context"]=="skipPasswordUpdate"){
@@ -1267,6 +1307,8 @@ $$(document).on("click", "[data-action='addedititem']", function(e){
                         if(currentPage=="index"){
                             
                             if(data["results"]["eventname"]){
+                                
+                               
                                         //Send registration ID + Event ID pair for push notifications
                                         setupPush(data["id"]);
                                     }
@@ -1282,6 +1324,10 @@ $$(document).on("click", "[data-action='addedititem']", function(e){
                                 });
                                  if(data["results"]["eventlogo"]){
                                     window.setTimeout(function(){
+                                         if(data["results"]["welcomemessagefirsttime"]){
+                                            console.log("welcomemessagefirsttime");
+                                            show_overlay(data["results"]["welcomemessagefirsttime"]);
+                                        }
                                        $$("#splashScreen").addClass("passive");
                                         window.setTimeout(function(){
                                             $$("#splashScreen").addClass("basis");
@@ -1290,6 +1336,10 @@ $$(document).on("click", "[data-action='addedititem']", function(e){
                                 }else{
                                     $$("#splashScreen").addClass("passive");
                                         window.setTimeout(function(){
+                                             if(data["results"]["welcomemessagefirsttime"]){
+                                            console.log("welcomemessagefirsttime");
+                                            show_overlay(data["results"]["welcomemessagefirsttime"]);
+                                        }
                                             $$("#splashScreen").addClass("basis");
                                         }, 1000);
                                 }
@@ -1323,6 +1373,11 @@ myApp.onPageInit('discussion', function (page) {
     }, reloadDiscussionEvery);
     
   // "page" variable contains all required information about loaded and initialized page 
+});
+
+myApp.onPageInit('me', function (page) {
+    autoLoadCurrentMEWithQuestion(page.context.eventid, false);
+   
 });
 
 myApp.onPageAfterBack('index', function(page){
@@ -1385,7 +1440,14 @@ myApp.onPageInit('note', function (page) {
 });
 
 myApp.onPageBack('*', function(page){
+    console.log(page.name);
+    /*
     autoLoadWelcomeTemplate(page);
+    if(page.name=="attendee"){
+        console.log('attendee page initialized attendeeid=' + page.context.attendeeid);
+    autoLoadCurrentAttendeeDetails(page.context.attendeeid, page.context.eventid);
+    }
+    */
 });
 
 myApp.onPageInit('attendee', function (page) {
@@ -1419,6 +1481,16 @@ myApp.onPageInit('poll', function (page) {
     }, 5000);
     
   // "page" variable contains all required information about loaded and initialized page 
+});
+
+$$(document).on("click", "[data-action='hideoverlay']", function(){
+    var $this=$$(this);
+    var $thisPopup=$this.closest("div.popup1");
+    setCookie("hhUserLoggedInWhatEventFirstTimeClosed", 'user:'+$thisPopup.attr("data-userid")+'eventid:'+$thisPopup.attr("data-eventid"), 700);
+    $thisPopup.addClass("fadeOut");
+    window.setTimeout(function(){
+        $thisPopup.remove();
+    }, 600);
 });
 
 $$(document).on("click", "input[type=file]", function(){
@@ -1609,6 +1681,11 @@ function checkIsUserStillLoggedIn(token){
                                          reload: false,
                                          context: data
                                      });
+                                     
+                                     if(data["results"]["welcomemessagefirsttime"]){
+                                            console.log("welcomemessagefirsttime");
+                                            show_overlay(data["results"]["welcomemessagefirsttime"]);
+                                        }
                                  }
                              }else{
                                  mainView.router.load({
@@ -1728,6 +1805,10 @@ function autoLoadWelcomeTemplate(){
                     }, 1000);
                 }else{
                     if(data["results"]["eventname"]){
+                        if(data["results"]["welcomemessagefirsttime"]){
+                                            console.log("welcomemessagefirsttime");
+                                            show_overlay(data["results"]["welcomemessagefirsttime"]);
+                                        }
                                         //Send registration ID + Event ID pair for push notifications
                                         setupPush(data["id"]);
                                     }
@@ -1880,9 +1961,14 @@ function autoLoadCurrentAttendeeDetails(id, eventid){
                             socialNetworks +='<a target="_blank" class="external" href="'+data1["linkedin"]+'"><img src="images/linkedin.png" alt="" /></a>';
                         }
                         window.setTimeout(function(){
+                            if($$("#wrapAttendeeHeaderText").length<1){
                             $$("#wrapAttendees > .personalBlock").addClass(data1["classAnswers"]);
+                        }
                             $$("#wrapAttendees > .personalBlock .socialIcons").html(socialNetworks);
                             $$("#wrapAttendees > .surveyBlock").html(questionsAndAnswers);
+                            if(data1["herewithattendee"]){
+                                $$("#wrapAttendees > .surveyBlock").prepend($$(data1["herewithattendee"]));
+                            }
                         }, 200);
                    }
                }else{
@@ -1948,6 +2034,41 @@ function autoLoadCurrentPoll(id){
            isAjaxLoaded=false;
        }
     });
+}
+
+function autoLoadCurrentMEWithQuestion(id, isAjaxLoader){
+    var currentPage=mainView.activePage.name;
+    if(currentPage!="me"){
+        isAjaxLoaded=false;
+        return false;
+    }
+    if(isAjaxLoaded) return false;
+    isAjaxLoaded=true;
+    if(isAjaxLoader){
+        displayActionLoader();
+    }
+    var postData={id: id, context: "loadCurrentMEWithQuestion"};
+    
+    $$.ajax({
+       type: "POST",
+       url: pathToAjaxDispatcher,
+       data: postData,
+       dataType: "json",
+       success: function(data){
+           isAjaxLoaded=false;
+           if(isAjaxLoader){
+                removeActionLoader();
+            }
+               if(data["success"]==1){
+                   $$("#wrapWithQuestionIfApply").html(data["content"]);
+               }
+            }, error: function(){
+                if(isAjaxLoader){
+                     removeActionLoader();
+                 }
+                isAjaxLoaded=false;
+            }
+       });
 }
 
 function autoLoadCurrentDiscussion(id, isAjaxLoader){

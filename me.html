@@ -86,10 +86,14 @@
                             </div>
                         </div>
                     </div>
+                    <!-- wrap I'm with if apply -->
                     
+                    <div id="wrapSurveys" class="wrapQuestions wrapAttractions">
+                        <div class="padd20">
+                        <div id="wrapWithQuestionIfApply" class="wrapWithQuestionIfApply"></div>
                     {{#if results}}
                         {{#if results.records}}
-                            <div id="wrapSurveys" class="wrapQuestions wrapAttractions padd20">
+                            
                                 {{#each results.records}}
                                     <div class="item text-center text-white">
                                         <div class="wrapQuestion">
@@ -98,9 +102,11 @@
                                         </div>
                                     </div>
                                 {{/each}}
-                            </div>
+                            
                         {{/if}}
                     {{/if}}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

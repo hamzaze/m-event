@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Gochi+Hand');
 
 .ProximaNovaA-Bold { 
 	font-family: ProximaNovaA-Bold;
@@ -203,7 +204,7 @@ div.ajaxLoader > .fineloader{
     z-index: 20020;
 }
 
-.hidden{
+.hidden, .wrapHideIf0{
     display: none;
 }
 
@@ -217,6 +218,10 @@ div.ajaxLoader > .fineloader{
 
 .right0{
     right: 0;
+}
+
+.bottom0{
+    bottom: 0;
 }
 
 .right10{
@@ -331,7 +336,7 @@ div.ajaxLoader > .fineloader{
     z-index: 1;
 }
 
-[data-page="custom"] > .overlayBlue, [data-page="discussion"] > .overlayBlue, [data-page="note"] > .overlayBlue, [data-page="me"] > .overlayBlue, [data-page="agenda"] > .overlayBlue, [data-page="survey"] > .overlayBlue, [data-page="poll"] > .overlayBlue, [data-page="question"] > .overlayBlue, [data-page="attendee"] > .overlayBlue, #splashScreen.noBackground > .overlayBlue{
+[data-page="custom"] > .overlayBlue, [data-page="discussion"] > .overlayBlue, [data-page="note"] > .overlayBlue, [data-page="me"] > .overlayBlue, [data-page="agenda"] > .overlayBlue, [data-page="survey"] > .overlayBlue, [data-page="poll"] > .overlayBlue, [data-page="question"] > .overlayBlue, [data-page="attendee"] > .overlayBlue, #splashScreen.noBackground > .overlayBlue, [data-page="attraction"] > .overlayBlue, [data-page="attendee1"] > .overlayBlue{
     background: #38729A;
 }
 
@@ -446,6 +451,12 @@ button{
 .btn-green{
     background-color: #9aca41;
     border-color: #9aca41;
+    color: #fff;
+}
+
+.btn-darkblue{
+    background-color: #052942;
+    border-color: #052942;
     color: #fff;
 }
 
@@ -576,6 +587,12 @@ input.mf-input{
     font-weight: 300;
     margin-top: 2rem;
     margin-bottom: 1.5rem;
+}
+
+.noradius{
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
 }
 
 button.btn.btn-sm, .loginBlock .fRow > div.inline-block > button{
@@ -712,7 +729,7 @@ h1.small{
 }
 
 .text-white-transparent{
-    color: rgba(255,255,255, 0.3);
+    color: rgba(255,255,255, 0.4);
 }
 
 .text-green{
@@ -721,6 +738,10 @@ h1.small{
 
 .text-primary{
     color: #38729A;
+}
+
+.text-darkblue{
+    color: #052942;
 }
 
 .text-left{
@@ -1277,6 +1298,10 @@ div#wrapSurveys.wrapAttractions div.item .collapse.activated{
 
 div#wrapSocialMedia.wrapAttractions div.item, div#wrapInfobooth.wrapAttractions div.item{
     height: 70px;
+}
+
+.h3{
+    font-size: 1rem;
 }
 
 div#wrapSurveys.wrapAttractions div.item div.wrapQuestion h3{
@@ -2519,6 +2544,13 @@ div.bg-image{
     overflow: hidden;
 }
 
+div.bg-image-flat{
+    height: inherit;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 #splashScreen div.mAOLThumb > div.ajaxLoader > .fineloader{
     border: 4px solid transparent;
     border-top: 4px solid #fff;
@@ -2555,6 +2587,10 @@ div.wrapAllForms{
     width: 33.3333%;
 }
 
+.underline{
+    text-decoration: underline;
+}
+
 div.wrapAdditionalButtons .btn > .badge{
     width: 20px;
     height: 20px;
@@ -2563,6 +2599,45 @@ div.wrapAdditionalButtons .btn > .badge{
     margin: 0;
     border: none;
     border: 0;
+}
+
+.list-block .item-after a.loadContext{
+    color: #8e8e93;
+    text-decoration: underline;
+}
+
+div.popup1{
+    top: 60px;
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    left: 0;
+    z-index: 10000;
+    padding: 20px;
+}
+
+div.popup1 > div.insideContent{
+    padding: 20px;
+    min-height: calc(100vh - 120px);
+}
+
+div.popup1 > div.insideContent div.bodytext{
+    border-top: solid 1px #eee;
+    padding: 20px 0;
+}
+
+div.popup1 > div.insideContent div.closeOverlay{
+    right: 15px;
+    top: 10px;
+    z-index: 40;
+    font-size: 1.3rem;
+}
+
+div.popup1 > div.insideContent div.closeOverlay > a.relative{
+    color: #ccc;
+}
+
+.wrapSignature{
+    font-family: "Gochi Hand", cursive;
 }
 
 @keyframes effect_clickme {

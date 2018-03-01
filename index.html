@@ -105,8 +105,8 @@
                                 <div id="wrapAPPOnStoreAndGooglePlay" class="wrapAPPOnStoreAndGooglePlay hidden text-center">
                                     <div class="paddTopBottom20">
                                         <div class="inline-block">
-                                            <div class="inline-block"><a target="_blank" class="external" href="#"><img src="images/AppStoreIcon.png" alt="Download on the App Store" /></a></div>
-                                            <div class="inline-block"><a target="_blank" class="external" href="#"><img src="images/GooglePlayIcon.png" alt="Download from Google Play" /></a></div>
+                                            <div class="inline-block"><a target="_blank" class="external" href="https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1244623596&mt=8"><img src="images/AppStoreIcon.png" alt="Download on the App Store" /></a></div>
+                                            <div class="inline-block"><a target="_blank" class="external" href="https://play.google.com/store/apps/details?id=com.meridianleadershipconference.meridianapp"><img src="images/GooglePlayIcon.png" alt="Download from Google Play" /></a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -369,12 +369,12 @@
                                                 <div class="col-100">
                                                     {{#each results.records}}
                                                         {{#if url}}
-                                                        <a href="{{url}}" target="_blank" class="external">
+                                                        <a{{actions}} data-href="{{realpath}}" href="{{realpath}}" target="_blank" data-id="{{id}}" class="{{linkClass}}" data-context='{{stringify this}}'> 
                                                         {{/if}}
                                                         <div class="item text-left text-white">
                                                             <div class="flexbox">
                                                                 {{#if image}}
-                                                                    <div class="image-holder"><img src="{{image}}" alt="{{name}}" /></div>
+                                                                    <div class="image-holder bg-image-flat" style="background-image: url('{{image}}')"></div>
                                                                 {{/if}}
                                                                 <div class="flex1"><i class="f7-icons top50 abs text-blue">chevron_right</i><h3>{{name}}</h3></div>
                                                             </div>
@@ -495,7 +495,7 @@
                                                                         <div class="col-100">
                                                                         <div class="wrappAlphabetBlock">
                                                                             {{#each results.records}}
-                                                                                    <a class="loadContext" href="attendee.html" data-context='{{stringify this}}'>
+                                                                                    <a class="loadContext" href="attendee.html" data-target="singleattendeeitem" data-id="{{attendeeid}}" data-context='{{stringify this}}'>
                                                                                     <div class="item text-left text-white{{itemClass}}">
                                                                                         <div class="flexbox">
                                                                                             <img class="circle" data-id="{{attendeeid}}" />
@@ -526,7 +526,7 @@
                                                                                         <div class="flexbox">
                                                                                             <div class="flex1"><div class="abs top50 right0">
                                                                                                 <img src="images/download_file_icon.png" alt="Download {{media}}" />
-                                                                                            </div><h3>{{name}}</h3><span class="small">{{media}} - added: {{createdon}}</span></div>
+                                                                                            </div>{{name}}</div>
                                                                                         </div>
                                                                                     </div>
                                                                                     </a>
@@ -680,7 +680,16 @@
                                                                         </div>
                                                                             {{else}}
                                                                                 
-                                                                                    <div class="abs top50 left50 fullwidth">
+                                                                                <div class="padd20 text-white">
+                                                                            <div id="wrapUserNotes" class="wrapAttractions paddTopBottom20 list-block hidden">
+                                                                            <ul>
+                                                                            
+                                                                            </ul>
+                                                                            <div class="paddTopBottom20 text-italic text-center">Swipe left on a note to delete it.</div>
+                                                                            </div>
+                                                                        </div>
+                                                                                
+                                                                                    <div class="abs top50 left50 fullwidth" data-target="hideifnotes">
                                                                                         <div class="text-center text-white">{{firstname}}, you have not added any<br />
                                                                                     notes to this section.<br />Please click the + icon in the top right<br />corner to add a note.</div>
                                                                                     </div>
@@ -833,7 +842,7 @@
                                                                                                         <div class="row">
                                                                                                             <div class="col-100">
                                                                                                                 {{#each results.records}}
-                                                                                                                    <div>
+                                                                                                                    <div class="wrapHideIf{{@key}}">
                                                                                                                         <h3>{{@key}}</h3>
                                                                                                                     </div>
                                                                                                                     <div class="bodytext">
