@@ -1441,13 +1441,8 @@ myApp.onPageInit('note', function (page) {
 
 myApp.onPageBack('*', function(page){
     console.log(page.name);
-    /*
     autoLoadWelcomeTemplate(page);
-    if(page.name=="attendee"){
-        console.log('attendee page initialized attendeeid=' + page.context.attendeeid);
-    autoLoadCurrentAttendeeDetails(page.context.attendeeid, page.context.eventid);
-    }
-    */
+    
 });
 
 myApp.onPageInit('attendee', function (page) {
