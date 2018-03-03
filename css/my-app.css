@@ -2638,6 +2638,7 @@ div.popup1 > div.insideContent div.closeOverlay > a.relative{
 
 .wrapSignature{
     font-family: "Gochi Hand", cursive;
+    font-size: 1.2rem;
 }
 
 @keyframes effect_clickme {

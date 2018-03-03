@@ -1482,10 +1482,30 @@ $$(document).on("click", "[data-action='hideoverlay']", function(){
     var $this=$$(this);
     var $thisPopup=$this.closest("div.popup1");
     setCookie("hhUserLoggedInWhatEventFirstTimeClosed", 'user:'+$thisPopup.attr("data-userid")+'eventid:'+$thisPopup.attr("data-eventid"), 700);
-    $thisPopup.addClass("fadeOut");
-    window.setTimeout(function(){
-        $thisPopup.remove();
-    }, 600);
+    
+    var postData={eventid: $thisPopup.attr("data-eventid"), attendeeid: $thisPopup.attr("data-userid"), context: "markEventWelcomeMessageAsViewed"};
+    
+    $$.ajax({
+       type: "POST",
+       url: pathToAjaxDispatcher,
+       data: postData,
+       dataType: "json",
+       success: function(data){
+           isAjaxLoaded=false;
+               if(data["success"]==1){
+                    $thisPopup.addClass("fadeOut");
+                    window.setTimeout(function(){
+                        $thisPopup.remove();
+                    }, 600);
+               }else{
+                   displayAlert(data["message"], $$("body"));
+               }
+            return false;
+       }, error: function(){
+           isAjaxLoaded=false;
+       }
+    });
+    
 });
 
 $$(document).on("click", "input[type=file]", function(){
