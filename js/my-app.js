@@ -80,14 +80,45 @@ $$(document).on('deviceready', function(){
  });
 
 if(!checkCookie()){
-    mainView.router.load({
-        template: Template7.templates.loginTemplate,
-        animatePages: false,
-        reload: false
-    }); 
-    
-    $$("#splashScreen").addClass("passive basis");
-    $$("#splashScreen div[data-target='replacewithsplashlogo']").html("");
+    //Check for local storage user is logged in
+    if(localStorage.getItem("hhUserLoggedInApp")===null){
+        mainView.router.load({
+            template: Template7.templates.loginTemplate,
+            animatePages: false,
+            reload: false
+        }); 
+
+        $$("#splashScreen").addClass("passive basis");
+        $$("#splashScreen div[data-target='replacewithsplashlogo']").html("");
+    }else{
+        if(localStorage.getItem('welcomeTemplate')===null){
+            mainView.router.load({
+                template: Template7.templates.loginTemplate,
+                animatePages: false,
+                reload: false
+            });
+            $$("#splashScreen").addClass("passive");
+                                window.setTimeout(function(){
+                                    $$("#splashScreen").addClass("basis");
+                                }, 1000);
+        }else{
+            if(!checkIsUserStillLoggedIn(localStorage.getItem("hhUserLoggedInApp"))){
+                mainView.router.load({
+                    template: Template7.templates.loginTemplate,
+                    animatePages: false,
+                    reload: false
+                });
+            }else{
+                var data=JSON.parse(localStorage.getItem('welcomeTemplate'));
+                mainView.router.load({
+                    template: Template7.templates.welcomeTemplate,
+                    animatePages: false,
+                    reload: false,
+                    context: data
+                });
+            }
+        }
+    }
     /*
     window.setTimeout(function(){
         $$("#splashScreen").remove();
@@ -447,12 +478,9 @@ DP.validateForm = function(){
                                     }, 1000);
                                 }else{
                                     setCookie("hhUserLoggedInApp", data["token"], 7);
+                                    localStorage.setItem("hhUserLoggedInApp", data["token"]);
                                     if(data["results"]["eventname"]){
                                         
-                                        if(data["results"]["welcomemessagefirsttime"]){
-                                            console.log("welcomemessagefirsttime");
-                                            show_overlay(data["results"]["welcomemessagefirsttime"]);
-                                        }
                                         
                                         //Send registration ID + Event ID pair for push notifications
                                         setupPush(data["results"]["eventid"]);
@@ -482,12 +510,27 @@ DP.validateForm = function(){
                                                         if(data["results"]["eventlogo"]){
                                                             window.setTimeout(function(){
                                                                $$("#splashScreen").addClass("passive");
+                                                               //Check for Welcome Message
+                                                               if(data["results"]["welcomemessagefirsttime"]){
+                                                                    console.log("welcomemessagefirsttime");
+                                                                    show_overlay(data["results"]["welcomemessagefirsttime"]);
+                                                                }       
+                                                               
+                                                               
                                                                 window.setTimeout(function(){
                                                                     $$("#splashScreen").addClass("basis");
                                                                 }, 1000);
                                                             }, 2000);
                                                         }else{
                                                             $$("#splashScreen").addClass("passive");
+                                                            
+                                                            //Check for Welcome Message
+                                                               if(data["results"]["welcomemessagefirsttime"]){
+                                                                    console.log("welcomemessagefirsttime");
+                                                                    show_overlay(data["results"]["welcomemessagefirsttime"]);
+                                                                }
+                                                            
+                                                            
                                                                 window.setTimeout(function(){
                                                                     $$("#splashScreen").addClass("basis");
                                                                 }, 1000);
@@ -501,6 +544,10 @@ DP.validateForm = function(){
                                                                     myApp.closeModal('.popover-ifnoprofilephoto', true);
                                                                 }, 6000);
                                                             }, 300);
+                                                     
+                                                           
+                                                    
+                                                            
                                                     }
                                                     }else if(whatForm=="frmForgotPassword"){
                                                         displayInfo(data["message"], $$("body"));
@@ -880,6 +927,7 @@ function checkCookie() {
         return true;
     } else {
         return false;
+        
     }
 }
 
@@ -1347,6 +1395,9 @@ $$(document).on("click", "[data-action='addedititem']", function(e){
                         }
                         return false;
                     }else{
+                        //remove local storage for logged in user
+                        localStorage.removeItem("hhUserLoggedInApp");
+                        
                         mainView.router.load({
                             template: Template7.templates.loginTemplate,
                             animatePages: true,
