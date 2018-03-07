@@ -922,6 +922,7 @@ function checkEventCookie() {
 }
 
 function checkCookie() {
+    return false;
     var username = getCookie("hhUserLoggedInApp");
     if (username != "") {
         return true;
