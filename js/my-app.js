@@ -490,6 +490,8 @@ DP.validateForm = function(){
                                     setCookie("hhUserLoggedInApp", data["token"], 7);
                                     localStorage.setItem("hhUserLoggedInApp", data["token"]);
                                     localStorage.setItem("hhUserLoggedInEmailAddress", data["email"]);
+                                    loginTemplateData["email"]=localStorage.getItem("hhUserLoggedInEmailAddress");
+                                    
                                     if(data["results"]["eventname"]){
                                         
                                         
