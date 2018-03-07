@@ -78,6 +78,11 @@ $$(document).on('deviceready', function(){
        $$("#wrapAPPOnStoreAndGooglePlay").removeClass("hidden");
    }
  });
+ 
+ var loginTemplateData={email: ""};
+if(localStorage.getItem("hhUserLoggedInEmailAddress")!==null){
+    loginTemplateData["email"]=localStorage.getItem("hhUserLoggedInEmailAddress");
+}
 
 if(!checkCookie()){
     //Check for local storage user is logged in
@@ -85,7 +90,8 @@ if(!checkCookie()){
         mainView.router.load({
             template: Template7.templates.loginTemplate,
             animatePages: false,
-            reload: false
+            reload: false,
+            context: loginTemplateData
         }); 
 
         $$("#splashScreen").addClass("passive basis");
@@ -95,7 +101,8 @@ if(!checkCookie()){
             mainView.router.load({
                 template: Template7.templates.loginTemplate,
                 animatePages: false,
-                reload: false
+                reload: false,
+                context: loginTemplateData
             });
             $$("#splashScreen").addClass("passive");
                                 window.setTimeout(function(){
@@ -106,7 +113,8 @@ if(!checkCookie()){
                 mainView.router.load({
                     template: Template7.templates.loginTemplate,
                     animatePages: false,
-                    reload: false
+                    reload: false,
+                    context: loginTemplateData
                 });
             }else{
                 var data=JSON.parse(localStorage.getItem('welcomeTemplate'));
@@ -129,7 +137,8 @@ if(!checkCookie()){
         mainView.router.load({
             template: Template7.templates.loginTemplate,
             animatePages: false,
-            reload: false
+            reload: false,
+            context: loginTemplateData
         });
         $$("#splashScreen").addClass("passive");
                             window.setTimeout(function(){
@@ -141,7 +150,8 @@ if(!checkCookie()){
             mainView.router.load({
                 template: Template7.templates.loginTemplate,
                 animatePages: false,
-                reload: false
+                reload: false,
+                context: loginTemplateData
             });
         }else{
             var data=JSON.parse(localStorage.getItem('welcomeTemplate'));
@@ -479,6 +489,7 @@ DP.validateForm = function(){
                                 }else{
                                     setCookie("hhUserLoggedInApp", data["token"], 7);
                                     localStorage.setItem("hhUserLoggedInApp", data["token"]);
+                                    localStorage.setItem("hhUserLoggedInEmailAddress", data["email"]);
                                     if(data["results"]["eventname"]){
                                         
                                         
@@ -1085,7 +1096,8 @@ $$(document).on("click", "a[data-action='back']", function(e){
         mainView.router.load({
             template: Template7.templates.loginTemplate,
             animatePages: false,
-            reload: false
+            reload: false,
+            context: loginTemplateData
         });
     }else{
         var data=JSON.parse(localStorage.getItem(templateName));
@@ -1402,7 +1414,8 @@ $$(document).on("click", "[data-action='addedititem']", function(e){
                         mainView.router.load({
                             template: Template7.templates.loginTemplate,
                             animatePages: true,
-                            reload: false
+                            reload: false,
+                            context: loginTemplateData
                         });
                         $$("#splashScreen").addClass("passive basis");
                     }
@@ -1758,7 +1771,8 @@ function checkIsUserStillLoggedIn(token){
                                  mainView.router.load({
                                      template: Template7.templates.loginTemplate,
                                      animatePages: false,
-                                     reload: false
+                                     reload: false,
+                                     context: loginTemplateData
                                  });
                              }
                              if(data["results"]["eventlogo"] && data["results"]["profile"]["ispasswordupdated"]==1){
@@ -1807,7 +1821,8 @@ function checkIsUserStillLoggedIn(token){
                                  mainView.router.load({
                                      template: Template7.templates.loginTemplate,
                                      animatePages: false,
-                                     reload: false
+                                     reload: false,
+                                     context: loginTemplateData
                                  });
                              }
                              $$("#splashScreen").addClass("passive");
