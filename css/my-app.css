@@ -732,6 +732,10 @@ h1.small{
     color: rgba(255,255,255, 0.4);
 }
 
+.text-white-transparent1{
+    color: rgba(255,255,255, 0.7);
+}
+
 .text-green{
     color: #a7cc46;
 }

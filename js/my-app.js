@@ -1,5 +1,5 @@
 Template7.registerHelper('stringify', function (context){
-    var str = JSON.stringify(context);
+    var str = totalStringify(context);
     // Need to replace any single quotes in the data with the HTML char to avoid string being cut short
     return str.split("'").join('&#39;');
 });
@@ -514,7 +514,7 @@ DP.validateForm = function(){
                                                         
                                                         
                                                         
-                                                        localStorage.setItem('welcomeTemplate', JSON.stringify(data));
+                                                        localStorage.setItem('welcomeTemplate', totalStringify(data));
                                                         mainView.router.load({
                                                             template: Template7.templates.welcomeTemplate,
                                                             context: data
@@ -1093,7 +1093,7 @@ $$(document).on("click", "a[data-action='back']", function(e){
     var $this=$$(this);
     
     var templateName=$this.attr("data-templatename");
-    localStorage.setItem(templateName, JSON.stringify(data));
+    localStorage.setItem(templateName, totalStringify(data));
     if(localStorage.getItem(templateName)===null){
         mainView.router.load({
             template: Template7.templates.loginTemplate,
@@ -1727,7 +1727,7 @@ function checkIsUserStillLoggedIn(token){
                        $$("#splashScreen").addClass("noBackground");
                    }
                     if(data["results"]["eventname"]){
-                        localStorage.setItem('welcomeTemplate', JSON.stringify(data));
+                        localStorage.setItem('welcomeTemplate', totalStringify(data));
                         var currentPage=mainView.activePage.name;
                         if(currentPage=="index"){
                              if(localStorage.getItem('welcomeTemplate')!==null){
@@ -1868,8 +1868,8 @@ function autoLoadWelcomeTemplate(){
                    var currentPageName=mainView.activePage.name;
                    
                    console.log("It is updating welcomeTemplate localStorage now for page: " + currentPageName);
-                   localStorage.setItem('welcomeTemplate', JSON.stringify(data));
-                   akaLocalStorageWelcomeTemplate=JSON.stringify(data);
+                   localStorage.setItem('welcomeTemplate', totalStringify(data));
+                   akaLocalStorageWelcomeTemplate=totalStringify(data);
             if(currentPageName=='index'){
                 //Check is password updated once
                 if(data["results"]["profile"]["ispasswordupdated"]==0){
@@ -2356,3 +2356,20 @@ function setupPush(eventid) {
      });
     }
  }
+ 
+ String.prototype.escapeSpecialChars = function() {
+    return this.replace(/\\n/g, "\\n")
+               .replace(/\\'/g, "\\'")
+               .replace(/\\"/g, '\\"')
+               .replace(/\\&/g, "\\&")
+               .replace(/\\r/g, "\\r")
+               .replace(/\\t/g, "\\t")
+               .replace(/\\b/g, "\\b")
+               .replace(/\\f/g, "\\f");
+};
+
+function totalStringify(data){
+    var str=JSON.stringify(data);
+    str = str.escapeSpecialChars();
+    return str;
+}
