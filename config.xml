@@ -29,7 +29,7 @@
         <icon src="res/android/mipmap-xhdpi/ic_launcher.png" density="xhdpi" />
         <icon src="res/android/mipmap-xxhdpi/ic_launcher.png" density="xxhdpi" />
         <icon src="res/android/mipmap-xxxhdpi/ic_launcher.png" density="xxxhdpi" />
-        <resource-file src="google-services.json" target="/google-services.json" />
+        <resource-file src="google-services.json" target="app/google-services.json" />
     </platform>
      <platform name="ios">
         <splash src="res/ios/splash/Default~iphone.png" width="320" height="480"/>
