@@ -44,7 +44,7 @@
         <splash src="res/ios/splash/Default-Landscape-736h.png" width="2208" height="1242"/>
         
         <!-- App Store -->
-        <icon src="res/icon/ios/Icon-App-1024x1024@1x.png" platform="ios" width="1024" height="1024" />
+        <icon src="res/ios/icon/Icon-App-1024x1024@1x.png" platform="ios" width="1024" height="1024" />
         <!-- iPhone 6 / 6+ -->
         <icon src="res/ios/icon/Icon-App-60x60@3x.png" platform="ios" width="180" height="180" />
 
