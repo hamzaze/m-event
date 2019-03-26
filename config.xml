@@ -43,6 +43,8 @@
         <splash src="res/ios/splash/Default-736h.png" width="1242" height="2208"/>
         <splash src="res/ios/splash/Default-Landscape-736h.png" width="2208" height="1242"/>
         
+        <icon src="res/ios/icon.png" platform="ios" width="57" height="57" density="mdpi" />
+        
         <!-- iPhone 6 / 6+ -->
         <icon src="res/ios/icon/Icon-App-60x60@3x.png" platform="ios" width="180" height="180" />
 
