@@ -109,5 +109,5 @@
     <edit-config target="NSPhotoLibraryAddUsageDescription" file="*-Info.plist" mode="merge">
         <string>need to photo library access to save pictures there</string>
     </edit-config>
-    <preference name="phonegap-version" value="cli-7.0.1" />
+    <preference name="phonegap-version" value="cli-8.1.1" />
 </widget>
