@@ -13,7 +13,16 @@
   <icon src="icon.png"/>
   <platform name="android">
         <!-- you can use any density that exists in the Android project -->
-        
+        <splash src="res/android/splash/splash-land-hdpi.png" density="land-hdpi"/>
+        <splash src="res/android/splash/splash-land-ldpi.png" density="land-ldpi"/>
+        <splash src="res/android/splash/splash-land-mdpi.png" density="land-mdpi"/>
+        <splash src="res/android/splash/splash-land-xhdpi.png" density="land-xhdpi"/>
+
+        <splash src="res/android/splash/splash-port-hdpi.png" density="port-hdpi"/>
+        <splash src="res/android/splash/splash-port-ldpi.png" density="port-ldpi"/>
+        <splash src="res/android/splash/splash-port-mdpi.png" density="port-mdpi"/>
+        <splash src="res/android/splash/splash-port-xhdpi.png" density="port-xhdpi"/>
+      
         <icon src="res/android/mipmap-ldpi/ic_launcher.png" density="ldpi" />
         <icon src="res/android/mipmap-mdpi/ic_launcher.png" density="mdpi" />
         <icon src="res/android/mipmap-hdpi/ic_launcher.png" density="hdpi" />
@@ -23,6 +32,16 @@
         <resource-file src="google-services.json" target="google-services.json" />
     </platform>
      <platform name="ios">
+        <splash src="res/ios/splash/Default~iphone.png" width="320" height="480"/>
+        <splash src="res/ios/splash/Default@2x~iphone.png" width="640" height="960"/>
+        <splash src="res/ios/splash/Default-Portrait~ipad.png" width="768" height="1024"/>
+        <splash src="res/ios/splash/Default-Portrait@2x~ipad.png" width="1536" height="2048"/>
+        <splash src="res/ios/splash/Default-Landscape~ipad.png" width="1024" height="768"/>
+        <splash src="res/ios/splash/Default-Landscape@2x~ipad.png" width="2048" height="1536"/>
+        <splash src="res/ios/splash/Default-568h@2x~iphone.png" width="640" height="1136"/>
+        <splash src="res/ios/splash/Default-667h.png" width="750" height="1334"/>
+        <splash src="res/ios/splash/Default-736h.png" width="1242" height="2208"/>
+        <splash src="res/ios/splash/Default-Landscape-736h.png" width="2208" height="1242"/>
         
         <!-- iPhone 6 / 6+ -->
         <icon src="res/ios/icon/Icon-App-60x60@3x.png" platform="ios" width="180" height="180" />
