@@ -92,7 +92,7 @@
     <preference name="deployment-target" value="8.0" />
     <preference name="DisallowOverscroll" value="true"/>
     
-    <plugin name="phonegap-plugin-push" spec="2.0.0" />
+    <plugin name="phonegap-plugin-push" spec="~2.2.3" />
     <plugin name="cordova-plugin-dialogs" />
     <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
     <plugin name="cordova-plugin-camera" source="npm" >
